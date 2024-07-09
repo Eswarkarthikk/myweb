@@ -1,3 +1,4 @@
 Django
 requests
 gradio_client
+whitenoise
