@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-$3q248c8aa=v*uttprq@9p)s&=-o-6+40$d9!bucd-_jaa-p23
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['myresume.vercel.app', '*']
+ALLOWED_HOSTS = ['.vercel.app', '*']
 
 
 # Application definition
