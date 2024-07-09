@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload and Prediction</title>
+    <style>
+        .image-container {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        {% if original_image_base64 and predicted_image_base64 %}
+            <h2>Original Image</h2>
+            <img src="data:image/jpeg;base64,{{ original_image_base64 }}" alt="Original Image">
+
+            <h2>Predicted Image</h2>
+            <img src="data:image/jpeg;base64,{{ predicted_image_base64 }}" alt="Predicted Image">
+        {% endif %}
+    </div>
+    <br><br>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Upload Image</button>
+    </form>
+</body>
+</html>
