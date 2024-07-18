@@ -12,22 +12,29 @@ import httpx
 # Initialize the Gradio client with the correct endpoint URL
 client = Client("https://eswarkarthikk-object-detection.hf.space")
 
-def compress_image(image_file, max_bytes=2 * 1024 * 1024):
+def compress_image(image_file, max_size_bytes=2 * 1024 * 1024):
     """Compress image to fit within the specified byte size."""
     img = Image.open(image_file)
     
-    # Ensure the image is in RGB format
-    img = img.convert('RGB')
+    # Calculate the current file size
+    original_size = image_file.size
     
-    buffer = tempfile.SpooledTemporaryFile(max_size=max_bytes)
+    # If already within the limit, return the original file
+    if original_size <= max_size_bytes:
+        return image_file
     
-    # Save the image with reduced quality to fit within the byte limit
+    # Calculate the compression ratio
+    ratio = (max_size_bytes / float(original_size)) ** 0.5
+    
+    # Resize the image
+    img = img.resize((int(img.width * ratio), int(img.height * ratio)), Image.LANCZOS)
+    
+    # Save the image to a temporary buffer
+    buffer = tempfile.NamedTemporaryFile(delete=False)
     img.save(buffer, format='JPEG', quality=85)
+    buffer.close()
     
-    # Rewind the buffer to the beginning
-    buffer.seek(0)
-    
-    return buffer
+    return buffer.name
 
 def upload_image(request):
     if request.method == 'POST':
@@ -38,14 +45,14 @@ def upload_image(request):
                 image_file = request.FILES['image']
 
                 # Compress the image before sending to the API
-                compressed_image_buffer = compress_image(image_file)
+                compressed_image_path = compress_image(image_file)
 
                 # Convert the original image to base64
                 original_image_base64 = base64.b64encode(image_file.read()).decode('utf-8')
 
                 # Example using gradio_client to predict with local file
                 with httpx.Client(timeout=30) as http_client:  # Set a longer timeout if needed
-                    result = client.predict(image=handle_file(compressed_image_buffer))
+                    result = client.predict(image=handle_file(compressed_image_path))
 
                 # Check if the result is a file path
                 if isinstance(result, str) and os.path.isfile(result):
@@ -63,6 +70,11 @@ def upload_image(request):
 
             except Exception as e:
                 return HttpResponseServerError(f"Error: {str(e)}")
+
+            finally:
+                # Clean up the temporary files
+                if 'compressed_image_path' in locals() and os.path.exists(compressed_image_path):
+                    os.remove(compressed_image_path)
 
     else:
         form = UploadImageForm()
