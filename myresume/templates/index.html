@@ -3,36 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Upload and Prediction</title>
+    <title>Uploaded Images</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        .image-container {
-            max-width: 500px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin-bottom: 20px;
-        }
+        /* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    color: #333333;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+}
+
     </style>
 </head>
 <body>
-    <div class="image-container">
-        {% if original_image_base64 and predicted_image_base64 %}
-            <h2>Original Image</h2>
-            <img src="data:image/jpeg;base64,{{ original_image_base64 }}" alt="Original Image">
+    <div class="container">
+        <h2>Original Image</h2>
+        <img id="originalImage" src="{{ original_image_base64 }}" alt="Original Image">
 
-            <h2>Predicted Image</h2>
-            <img src="data:image/jpeg;base64,{{ predicted_image_base64 }}" alt="Predicted Image">
-        {% endif %}
+        <h2>Predicted Image</h2>
+        <img id="predictedImage" src="{{ predicted_image_base64 }}" alt="Predicted Image">
+
+        <hr>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Upload Image</button>
+        </form>
     </div>
-    <br><br>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit">Upload Image</button>
-    </form>
 </body>
 </html>
