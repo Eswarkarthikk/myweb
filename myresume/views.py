@@ -54,7 +54,8 @@ def upload_image(request):
                 compressed_image_path = compress_image(temp_file_path)
 
                 # Convert the original image to base64
-                original_image_base64 = base64.b64encode(image_file.read()).decode('utf-8')
+                with open(temp_file_path, 'rb') as img_file:
+                    original_image_base64 = base64.b64encode(img_file.read()).decode('utf-8')
 
                 # Example using gradio_client to predict with local file
                 with httpx.Client(timeout=30) as http_client:  # Set a longer timeout if needed
@@ -68,8 +69,8 @@ def upload_image(request):
 
                     # Pass the base64 encoded images to the template
                     return render(request, 'index.html', {
-                        'original_image_base64': original_image_base64,
-                        'predicted_image_base64': predicted_image_base64
+                        'original_image_base64': f"data:image/jpeg;base64,{original_image_base64}",
+                        'predicted_image_base64': f"data:image/jpeg;base64,{predicted_image_base64}"
                     })
                 else:
                     raise ValueError("Unexpected response format from Gradio API")
