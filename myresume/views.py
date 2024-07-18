@@ -1,5 +1,7 @@
 import io
 import base64
+import os
+import shutil
 from django.shortcuts import render
 from django.http import HttpResponseServerError
 from .forms import UploadImageForm
@@ -42,11 +44,10 @@ def upload_image(request):
                 compressed_image_buffer = compress_image(image_file)
 
                 # Convert the original image to base64
-                original_image_base64 = base64.b64encode(compressed_image_buffer.getvalue()).decode('utf-8')
+                compressed_image_base64 = base64.b64encode(compressed_image_buffer.getvalue()).decode('utf-8')
 
-                # Send the compressed image buffer to the Gradio API
-                compressed_image_buffer.seek(0)
-                result = client.predict(image=compressed_image_buffer)
+                # Send the base64 encoded image to the Gradio API
+                result = client.predict(image=compressed_image_base64)
 
                 # Check if the result is a file path
                 if isinstance(result, str) and os.path.isfile(result):
@@ -56,7 +57,7 @@ def upload_image(request):
 
                     # Pass the base64 encoded images to the template
                     return render(request, 'index.html', {
-                        'original_image_base64': original_image_base64,
+                        'original_image_base64': compressed_image_base64,
                         'predicted_image_base64': predicted_image_base64
                     })
                 else:
