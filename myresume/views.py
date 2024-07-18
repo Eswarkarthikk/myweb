@@ -41,7 +41,7 @@ def upload_image(request):
                     original_image_base64 = base64.b64encode(img_file.read()).decode('utf-8')
 
                 # Example using gradio_client to predict with local file
-                with httpx.Client(timeout=60) as http_client:  # Set a longer timeout
+                with httpx.Client(timeout=30) as http_client:  # Set a longer timeout
                     result = client.predict(image=handle_file(resized_image_path))
 
                 # Check if the result is a file path
