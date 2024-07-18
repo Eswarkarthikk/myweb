@@ -9,9 +9,16 @@ from PIL import Image
 # Initialize the Gradio client with the correct endpoint URL
 client = Client("https://eswarkarthikk-object-detection.hf.space")
 
+def convert_image_to_rgb(image):
+    """Convert RGBA image to RGB."""
+    if image.mode == 'RGBA':
+        return image.convert('RGB')
+    return image
+
 def compress_image(image, max_bytes=2 * 1024 * 1024):
     """Compress image to fit within the specified byte size."""
     img = Image.open(image)
+    img = convert_image_to_rgb(img)
     buffer = io.BytesIO()
     
     # Save the image with reduced quality to fit within the byte limit
