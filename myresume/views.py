@@ -17,7 +17,7 @@ def compress_image(image_file, max_size_bytes=2 * 1024 * 1024):
     img = Image.open(image_file)
     
     # Calculate the current file size
-    original_size = image_file.size
+    original_size = os.path.getsize(image_file)
     
     # If already within the limit, return the original file
     if original_size <= max_size_bytes:
