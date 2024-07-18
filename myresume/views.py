@@ -44,8 +44,14 @@ def upload_image(request):
                 # Get the uploaded image file
                 image_file = request.FILES['image']
 
+                # Save the uploaded image to a temporary file
+                with tempfile.NamedTemporaryFile(delete=False) as temp_file:
+                    for chunk in image_file.chunks():
+                        temp_file.write(chunk)
+                    temp_file_path = temp_file.name
+
                 # Compress the image before sending to the API
-                compressed_image_path = compress_image(image_file)
+                compressed_image_path = compress_image(temp_file_path)
 
                 # Convert the original image to base64
                 original_image_base64 = base64.b64encode(image_file.read()).decode('utf-8')
@@ -73,6 +79,8 @@ def upload_image(request):
 
             finally:
                 # Clean up the temporary files
+                if 'temp_file_path' in locals() and os.path.exists(temp_file_path):
+                    os.remove(temp_file_path)
                 if 'compressed_image_path' in locals() and os.path.exists(compressed_image_path):
                     os.remove(compressed_image_path)
 
