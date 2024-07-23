@@ -10,7 +10,7 @@ from PIL import Image
 import httpx
 
 # Initialize the Gradio client with the correct endpoint URL
-client = Client("https://eswarkarthikk-object-detection.hf.space")
+
 
 def compress_image(image_file, max_size_bytes=2 * 1024 * 1024):
     """Compress image to fit within the specified byte size."""
@@ -39,6 +39,7 @@ def compress_image(image_file, max_size_bytes=2 * 1024 * 1024):
 def upload_image(request):
     if request.method == 'POST':
         form = UploadImageForm(request.POST, request.FILES)
+        client = Client("https://eswarkarthikk-object-detection.hf.space")
         if form.is_valid():
             try:
                 # Get the uploaded image file
@@ -89,3 +90,7 @@ def upload_image(request):
         form = UploadImageForm()
 
     return render(request, 'index.html', {'form': form})
+
+def mainpage(request):
+    return render(request, 'homepage.html')
+    
