@@ -38,6 +38,10 @@ def compress_image(image_file, max_size_bytes=2 * 1024 * 1024):
 
 def upload_image(request):
     if request.method == 'POST':
+        if 'temp_file_path' in locals() and os.path.exists(temp_file_path):
+                    os.remove(temp_file_path)
+        if 'compressed_image_path' in locals() and os.path.exists(compressed_image_path):
+                    os.remove(compressed_image_path)
         form = UploadImageForm(request.POST, request.FILES)
         client = Client("https://eswarkarthikk-object-detection.hf.space")
         if form.is_valid():
