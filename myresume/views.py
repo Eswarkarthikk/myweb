@@ -18,61 +18,48 @@ def aboutme(request):
 def certifications(request):
     return render(request,'certifications.html')
 # views.py
-
-import pandas as pd
 from django.shortcuts import render
 
 def projects3(request):
-    data = {
-        'section title':[
-            'Object detection',
-            '',
-        '',
-        ''
-        ],
-        'title': [
-            'Object Detection using Faster RCNN',
-            'Project Two',
-            'Project Three',
-            'Project Four'
-        ],
-        'description': [
-            'This is a deep learning project developed in reigion based convolutional network. This model is trained on Pascal Voc 2012 dataset it can predict 20 classes that are | aeroplane | bicycle | bird | boat | bottle | bus | car | cat | chair | cow | dining table | dog | horse | motorbike | person | potted plant | sheep | sofa | train | tv/monitor |....This model is deployed in Hugging face and by using its api i have deployed another one so you can visit directly in my web . please feel free to go through my git repo.',
-            'This is a description for Project Two.',
-            'This is a description for Project Three.',
-            'This is a description for Project Four.'
-        ],
-
-        'image_link': [
-            'https://i.ibb.co/37jf8hb/image.png',
-            'https://example.com/image2.jpg',
-            'https://example.com/image3.jpg',
-            'https://example.com/image4.jpg'
-        ],
-        'github_link': [
-            'https://github.com/Eswarkarthikk/Ml-projects-/blob/main/r-cnn.ipynb',
-            'https://github.com/user/project2',
-            'https://github.com/user/project3',
-            'https://github.com/user/project4'
-        ],
-        'weblink': [
-            'https://objectdetection-weld.vercel.app/',
-            'https://example.com/test2',
-            'https://example.com/test3',
-            'https://example.com/test4'
-        ],
-        'hugging_face_link': [
-            'https://eswarkarthikk-object-detection.hf.space',
-            'https://huggingface.co/user/project2',
-            'https://huggingface.co/user/project3',
-            'https://huggingface.co/user/project4'
-        ]
-    }
-    
-    df = pd.DataFrame(data)
-    
-    # Convert DataFrame to a list of dictionaries
-    projects = df.to_dict(orient='records')
+    # Define the data directly as a list of dictionaries
+    projects = [
+        {
+            'section title': 'Object detection',
+            'title': 'Object Detection using Faster RCNN',
+            'description': 'This is a deep learning project developed in region-based convolutional network. This model is trained on Pascal VOC 2012 dataset; it can predict 20 classes that are: aeroplane, bicycle, bird, boat, bottle, bus, car, cat, chair, cow, dining table, dog, horse, motorbike, person, potted plant, sheep, sofa, train, tv/monitor. This model is deployed on Hugging Face and by using its API, I have deployed another one so you can visit directly on my web. Please feel free to go through my GitHub repo.',
+            'image_link': 'https://i.ibb.co/37jf8hb/image.png',
+            'github_link': 'https://github.com/Eswarkarthikk/Ml-projects-/blob/main/r-cnn.ipynb',
+            'weblink': 'https://objectdetection-weld.vercel.app/',
+            'hugging_face_link': 'https://eswarkarthikk-object-detection.hf.space'
+        },
+        {
+            'section title': '',
+            'title': 'Project Two',
+            'description': 'This is a description for Project Two.',
+            'image_link': 'https://example.com/image2.jpg',
+            'github_link': 'https://github.com/user/project2',
+            'weblink': 'https://example.com/test2',
+            'hugging_face_link': 'https://huggingface.co/user/project2'
+        },
+        {
+            'section title': '',
+            'title': 'Project Three',
+            'description': 'This is a description for Project Three.',
+            'image_link': 'https://example.com/image3.jpg',
+            'github_link': 'https://github.com/user/project3',
+            'weblink': 'https://example.com/test3',
+            'hugging_face_link': 'https://huggingface.co/user/project3'
+        },
+        {
+            'section title': '',
+            'title': 'Project Four',
+            'description': 'This is a description for Project Four.',
+            'image_link': 'https://example.com/image4.jpg',
+            'github_link': 'https://github.com/user/project4',
+            'weblink': 'https://example.com/test4',
+            'hugging_face_link': 'https://huggingface.co/user/project4'
+        }
+    ]
     
     # Render the template with the projects data
     return render(request, 'mlprojects.html', {'projects': projects})
