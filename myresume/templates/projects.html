@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        html, body {
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 200%;
+                background: linear-gradient(to bottom, #080117, #002f38);
+                background-size: cover; /* Ensure the gradient covers the entire area */
+                color: white;
+                overflow-x: hidden;
+                overflow-y: scroll;
+                scrollbar-width: none; 
+                -ms-overflow-style: none; 
+                min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+            }
+        }
+            body::-webkit-scrollbar {
+                display: none; /* For Chrome, Safari, and Opera */
+            } 
+         
+        .navbar {
+            position: fixed;
+            top: 30px;
+            left: 200px;
+            right: 200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            padding-bottom: 100px;
+            background-color: transparent;
+            z-index: 1000;
+        }
+        
+        .logo {
+            height: 50px;
+            margin-left: 20px;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin-right: 20px;
+        }
+        
+        nav ul li a {
+            color: rgb(120, 220, 254);
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .menu-icon {
+            display: none;
+            font-size: 26px;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                left: 20px;
+                right: 20px;
+            }
+        
+            .logo {
+                margin-left: 0;
+            }
+        
+            nav ul {
+                display: none;
+                position: absolute;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                top: 60px;
+                right: 20px;
+                width: 200px;
+                padding: 0;
+                background-color: #072b32;
+                border-radius: 20px;
+                border-bottom: 2px solid rgb(141, 236, 251);
+                border-top:2px solid rgb(141, 236, 251) ;
+            }
+        
+            nav ul.show {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                padding: 10px 20px;
+                border-bottom: 2px solid rgba(3, 33, 37, 0.329) ;
+            }
+        
+            nav ul li:last-child {
+                border-bottom: none;
+            }
+        
+            nav ul li a {
+                color: rgb(77, 221, 246);
+               
+                text-decoration: none;
+            }
+            nav ul li a :hover{
+                color: rgb(244, 76, 219);
+            }
+            .menu-icon {
+                display: block;
+                cursor: pointer;
+            }
+        }
+        
+        
+        .contact-section {
+            display: flex;
+            flex-direction: column;
+            padding: 30px 20px;
+            margin: 20px 200px;
+            text-align: left;
+            font-size: 20px;
+            background: rgba(255, 255, 255, 0.043);
+            border-radius: 30px;
+        }
+        
+        @media (min-width: 768px) {
+            .contact-section {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+        }
+        
+        .contact-title {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .contact-left {
+            margin-left: 40px; /* Adjusted to move right */
+            flex: 1;
+        }
+        
+        .contact-address {
+            font-size: 20px;
+            margin-bottom: 20px;
+            margin-left: 40px; /* Adjusted to move right */
+        }
+        
+        .contact-message {
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 40px; /* Adjusted to move right */
+        }
+        
+        .contact-info-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+    
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center images */
+            gap: 20px;
+        }
+        
+        .contact-info a {
+            display: inline-block;
+        }
+        
+        .contact-info img {
+            width: 70px;
+            height: 70px;
+            margin: 10px;
+        }
+        
+        .follow-text {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            width: 100%; /* Ensure text spans the entire width */
+        }
+        
+        @media (max-width: 768px) {
+            .contact-section {
+                margin: 20px;
+                padding: 20px;
+                flex-direction: column;
+                align-items: flex-start; /* Align items to the start */
+            }
+        .contact-title{
+            font-size:26px;
+        }
+             .contact-message, .contact-address, .contact-info a {
+                text-align: left;
+                font-size: 16px;
+                margin-left: 0; /* Reset margin */
+            }
+    
+            .contact-info {
+                justify-content: center;
+                align-items: center;
+                padding-left: 20px;
+                gap: 10px;
+            }
+        
+            .contact-info img {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+            }
+        
+            .follow-text {
+                font-size: 16px;
+            }
+        }
+    </style>
+    <style>
+        /* Floating icon styles */
+        .floating-icon {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background-color: #003b5a;
+            color: rgb(103, 219, 251);
+            border-radius: 50%;
+            border:2px solid rgb(0, 88, 103);
+            display: flex;
+            justify-content: center;
+            filter: drop-shadow(1px 1px 10px #000000);
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 30px;
+        }
+
+        /* Radio buttons styles */
+        .radio-input {
+            position: fixed;
+            bottom: 110px; /* Adjust based on the size of the floating icon */
+            right: 20px;
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            background-color: rgba(1, 0, 32, 0.968);
+            padding: 10px;
+            border-radius: 10px;
+            z-index: 1001;
+        }
+
+        .radio-input * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        .radio-input label {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 0px 20px;
+            width: 220px;
+            cursor: pointer;
+            height: 50px;
+            position: relative;
+        }
+
+        .radio-input label::before {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 220px;
+            height: 45px;
+            z-index: -1;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border-radius: 10px;
+            border: 2px solid transparent;
+        }
+
+        .radio-input label:hover::before {
+            transition: all 0.2s ease;
+            background-color: #2a2e3c;
+        }
+
+        .radio-input .label:has(input:checked)::before {
+            background-color: #254492;
+            border-color: #2926ce32;
+            height: 50px;
+        }
+
+        .radio-input .label .text {
+            color: #fff;
+        }
+
+        .radio-input .label input[type="radio"] {
+            background-color: #202030;
+            appearance: none;
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .radio-input .label input[type="radio"]:checked {
+            background-color: #435dd8;
+            -webkit-animation: pulse 0.7s forwards;
+            animation: pulse 0.7s forwards;
+        }
+
+        .radio-input .label input[type="radio"]:before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+            background-color: #fff;
+            transform: scale(0);
+        }
+
+        .radio-input .label input[type="radio"]:checked::before {
+            transform: scale(1);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+            }
+        }
+        @media (min-width: 768px) {
+            .floating-icon {
+                bottom: 40px; /* Adjust as needed */
+                background-color: #007bffc4;
+                color: rgb(103, 219, 251);                
+                right: 40px;  /* Adjust as needed */
+            }
+            .radio-input {
+                bottom: 140px; /* Adjust as needed */
+                right: 40px;  /* Adjust as needed */
+            }
+        }
+    </style>
+    <style>
+        .section {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+.snapshots{
+    text-align: center;
+    font-weight: bolder;
+    padding: 20px;
+}
+        .section-image {
+            flex: 0 0 40%; /* Increased image occupancy to 40% */
+            max-width: 40%;
+            padding: 15px;
+            order: 2; /* Adjusting order to place image on the right */
+        }
+        
+        .section-content {
+            flex: 0 0 60%; /* Adjusted content width to 60% */
+            max-width: 60%;
+            padding: 15px;
+            order: 1; /* Adjusting order to place content on the left */
+        }
+        .rounded-image {
+            width: 500px;
+            height: 350px; /* Ensuring image height adjusts proportionally */
+            border-radius: 15px;
+            object-fit: cover;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .buttons .btn {
+            flex: 0 0 48%;
+        }
+    </style>
+    <style>
+        .btn-github {
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            border: none;
+        }
+        
+        .btn-github:hover {
+            background-color: rgb(8, 199, 8);
+            color: white;
+        }
+        
+        .btn-share {
+            background-color: rgb(0, 0, 0);
+            color: white;
+            font-weight: bolder;
+            border: none;
+        }
+        
+        .btn-share:hover {
+            background-color: rgb(111, 228, 249);
+            color: rgb(9, 4, 81);
+        }
+    </style>
+    <style>
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column-reverse; /* Stack image below content */
+                margin-left: 0; /* Remove left margin */
+            }
+            .section-content, .section-image {
+                flex: 1 1 100%; /* Full width for both content and image */
+                max-width: 100%;
+                order: initial; /* Reset order for stacking */
+                padding: 15px;
+            }
+            .buttons {
+                flex-direction: row; /* Stack buttons vertically */
+                margin-top: 20px;
+            }
+            .buttons .btn {
+                margin-bottom: 10px; /* Add space between buttons */
+            }
+            .section-title {
+                font-size: 28px; /* Decrease font size for title */
+                font-weight: 600; /* Keep semibold weight */
+                text-align: center; /* Center align title */
+            }
+            .section-text {
+                text-align: justify; /* Justify text */
+                font-size: 20px;
+                font-weight: normal;
+                
+            }
+        }
+    </style>
+    <style>
+        /* Adjusted styles for smaller images */
+    
+        .unique-pictures-slider {
+            height: auto; /* Adjusted height to fit content */
+            max-width: 76rem;
+            margin: 0 auto;
+            padding-bottom: 1rem; /* Added padding to reduce space */
+            overflow: hidden; /* Hide overflow to prevent extra space */
+        }
+    
+        @media (max-width: 500px) {
+            .unique-pictures-slider {
+                max-width: 100%; /* Adjusted for smaller screens */
+                padding-bottom: 0.5rem; /* Adjusted padding for smaller screens */
+            }
+        }
+    
+        .unique-pictures-slide {
+            width: 20rem; /* Larger width for landscape images */
+            height: 20rem; /* Larger height for landscape images */
+            position: relative;
+            overflow: hidden;
+            margin-right: 1rem; /* Added margin for spacing between slides */
+        }
+    
+        @media (max-width: 500px) {
+            .unique-pictures-slide {
+                width: 20rem !important;
+                height: 20rem !important;
+                margin-right: 0.5rem; /* Adjusted margin for smaller screens */
+            }
+        }
+    
+        .unique-pictures-slide .unique-pictures-slide-img img {
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+            object-fit:fill;
+        }
+    
+        .swiper-pagination {
+            position: relative;
+            margin-top: 1rem; /* Adjusted margin as needed */
+            text-align: center;
+        }
+    
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            opacity: 0.5;
+            margin: 0 4px;
+            border-radius: 50%;
+        }
+    
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+    
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #fff;
+            z-index: 10;
+        }
+    
+        .swiper-button-next,
+        .swiper-button-prev {
+            z-index: 11; /* Ensure navigation buttons are above pagination */
+        }
+    </style>
+    <style>
+        /* General animation settings */
+        .animated {
+            opacity: 0;
+            transition: opacity 1s, transform 1s;
+        }
+        
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .icon-pop {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        /* Applying the animations */
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .icon-pop {
+            animation: popIn 1s ease-out forwards;
+        }
+        @media (max-width: 768px) {
+        
+            /* General animation settings */
+        .animated {
+            opacity: 0;
+            transition: opacity 1s, transform 1s;
+        }
+        
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .icon-pop {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        /* Applying the animations */
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .icon-pop {
+            animation: popIn 1s ease-out forwards;
+        }
+        }
+        </style>
+    
+    
+</head>
+<body>
+    <section class="navbar">
+        <img src="https://i.ibb.co/2MCsz0H/logo2.png" alt="Logo" class="logo">
+        <nav>
+            <ul class="hide">
+                <li><a href="{% url 'mainpage' %}" >Home</a></li>
+                <li><a href="{% url 'aboutme' %}">About Me</a></li>
+                <li><a href="{% url 'certifications' %}">Certifications</a></li>
+                <li><a href="{% url 'projects1' %}" style="color:rgb(0, 58, 82);font-weight:bold">Projects</a></li>
+                <li><a href="{% url 'experience1' %}">Experience</a></li>
+            </ul>
+        </nav>
+        <span class="menu-icon">&#9776;</span>
+    </section>
+  <section style="padding-bottom:100px"> </section>
+<section class="project animated">
+    <div class="container mt-5 animated">
+        <div class="section">
+            <div class="section-content animated">
+                <h2 class="section-title animated" style="font-size: 36px; font-weight: 600;">Section Title</h2>
+                <p class="section-text animated">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor elit non massa congue, ac suscipit eros malesuada. Integer dignissim sem nec sapien laoreet, vitae accumsan neque ultrices. Vivamus in ante id risus sollicitudin tristique et eu nisi. Nam ullamcorper purus non eros posuere, at venenatis lacus condimentum. Aenean nec gravida justo. Duis eget nunc fermentum, vulputate felis ac, cursus lacus. Praesent convallis felis eu magna vulputate, a sodales sapien pharetra. Integer laoreet metus id sapien convallis, non interdum nisl consequat. Proin consectetur felis id malesuada facilisis. Nullam vel orci in felis porttitor iaculis sit amet ut tortor. Nam imperdiet neque vel lorem dapibus, vel dapibus odio pellentesque. Curabitur vehicula orci eu arcu iaculis vestibulum. Sed euismod purus vitae nunc mollis ultricies. Maecenas ut libero ut lorem cursus fermentum.</p>
+                <div class="buttons animated">
+                    <a href="#" class="btn btn-primary btn-lg btn-github">
+                        <i class="bi bi-github"></i> Get code
+                    </a>
+                    <a href="#" class="btn btn-secondary btn-lg btn-share">
+                        Visit <i class="bi bi-send-fill"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="section-image animated">
+                <img src="https://via.placeholder.com/200" alt="Description" class="img-fluid rounded-image">
+            </div>
+        </div>
+    </div>
+    <section id="unique-pictures animated">
+        <h2 class="snapshots animated">Project SnapShots</h2>
+        <div class="slider-container">
+            <div class="swiper unique-pictures-slider animated">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="https://via.placeholder.com/200" alt="pictures">
+                        </div>
+                    </div>
+                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="https://via.placeholder.com/200" alt="pictures">
+                        </div>
+                    </div>                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="https://via.placeholder.com/300" alt="pictures">
+                        </div>
+                    </div>                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="https://via.placeholder.com/400" alt="pictures">
+                        </div>
+                    </div>                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="https://via.placeholder.com/500" alt="pictures">
+                        </div>
+                    </div>                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="https://via.placeholder.com/600" alt="pictures">
+                        </div>
+                    </div>                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="https://via.placeholder.com/700" alt="pictures">
+                        </div>
+                    </div>
+                    <!-- Add more slides as needed -->
+                </div>
+                <!-- Pagination and Navigation -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>   
+</section>
+<section class="project animated">
+    <div class="container mt-5 animated">
+        <div class="section">
+            <div class="section-content animated">
+                <h2 class="section-title animated" style="font-size: 36px; font-weight: 600;">Section Title</h2>
+                <p class="section-text animated">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor elit non massa congue, ac suscipit eros malesuada. Integer dignissim sem nec sapien laoreet, vitae accumsan neque ultrices. Vivamus in ante id risus sollicitudin tristique et eu nisi. Nam ullamcorper purus non eros posuere, at venenatis lacus condimentum. Aenean nec gravida justo. Duis eget nunc fermentum, vulputate felis ac, cursus lacus. Praesent convallis felis eu magna vulputate, a sodales sapien pharetra. Integer laoreet metus id sapien convallis, non interdum nisl consequat. Proin consectetur felis id malesuada facilisis. Nullam vel orci in felis porttitor iaculis sit amet ut tortor. Nam imperdiet neque vel lorem dapibus, vel dapibus odio pellentesque. Curabitur vehicula orci eu arcu iaculis vestibulum. Sed euismod purus vitae nunc mollis ultricies. Maecenas ut libero ut lorem cursus fermentum.</p>
+                <div class="buttons animated">
+                    <a href="#" class="btn btn-primary btn-lg btn-github">
+                        <i class="bi bi-github"></i> Get Code
+                    <a href="#" class="btn btn-secondary btn-lg btn-share">
+                        Visit <i class="bi bi-send-fill"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="section-image animated">
+                <img src="https://via.placeholder.com/200" alt="Description" class="img-fluid rounded-image">
+            </div>
+        </div>
+    </div>
+    <section id="unique-pictures animated">
+        <h2 class="snapshots animated">Project SnapShots</h2>
+        <div class="slider-container">
+            <div class="swiper unique-pictures-slider animated">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="https://via.placeholder.com/200" alt="pictures">
+                        </div>
+                    </div>
+                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="https://via.placeholder.com/200" alt="pictures">
+                        </div>
+                    </div>                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="https://via.placeholder.com/300" alt="pictures">
+                        </div>
+                    </div>                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="https://via.placeholder.com/400" alt="pictures">
+                        </div>
+                    </div>                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="https://via.placeholder.com/500" alt="pictures">
+                        </div>
+                    </div>                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="https://via.placeholder.com/600" alt="pictures">
+                        </div>
+                    </div>                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="https://via.placeholder.com/700" alt="pictures">
+                        </div>
+                    </div>
+                    <!-- Add more slides as needed -->
+                </div>
+                <!-- Pagination and Navigation -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>   
+</section><section class="project animated">
+    <div class="container mt-5 animated">
+        <div class="section">
+            <div class="section-content animated">
+                <h2 class="section-title animated" style="font-size: 36px; font-weight: 600;">Section Title</h2>
+                <p class="section-text animated">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor elit non massa congue, ac suscipit eros malesuada. Integer dignissim sem nec sapien laoreet, vitae accumsan neque ultrices. Vivamus in ante id risus sollicitudin tristique et eu nisi. Nam ullamcorper purus non eros posuere, at venenatis lacus condimentum. Aenean nec gravida justo. Duis eget nunc fermentum, vulputate felis ac, cursus lacus. Praesent convallis felis eu magna vulputate, a sodales sapien pharetra. Integer laoreet metus id sapien convallis, non interdum nisl consequat. Proin consectetur felis id malesuada facilisis. Nullam vel orci in felis porttitor iaculis sit amet ut tortor. Nam imperdiet neque vel lorem dapibus, vel dapibus odio pellentesque. Curabitur vehicula orci eu arcu iaculis vestibulum. Sed euismod purus vitae nunc mollis ultricies. Maecenas ut libero ut lorem cursus fermentum.</p>
+                <div class="buttons animated">
+                    <a href="#" class="btn btn-primary btn-lg btn-github">
+                        <i class="bi bi-github"></i> See Code
+                    </a>
+                    <a href="#" class="btn btn-secondary btn-lg btn-share">
+                        Visit <i class="bi bi-send-fill"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="section-image animated">
+                <img src="https://via.placeholder.com/200" alt="Description" class="img-fluid rounded-image">
+            </div>
+        </div>
+    </div>
+    <section id="unique-pictures animated">
+        <h2 class="snapshots animated">Project SnapShots</h2>
+        <div class="slider-container">
+            <div class="swiper unique-pictures-slider animated">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="https://via.placeholder.com/200" alt="pictures">
+                        </div>
+                    </div>
+                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="https://via.placeholder.com/200" alt="pictures">
+                        </div>
+                    </div>                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="https://via.placeholder.com/300" alt="pictures">
+                        </div>
+                    </div>                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="https://via.placeholder.com/400" alt="pictures">
+                        </div>
+                    </div>                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="https://via.placeholder.com/500" alt="pictures">
+                        </div>
+                    </div>                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="https://via.placeholder.com/600" alt="pictures">
+                        </div>
+                    </div>                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="https://via.placeholder.com/700" alt="pictures">
+                        </div>
+                    </div>
+                    <!-- Add more slides as needed -->
+                </div>
+                <!-- Pagination and Navigation -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>   
+</section>
+
+<div class="floating-icon" onclick="toggleRadioButtons()">
+    <i class="bi bi-menu-button-wide"></i>
+</div>
+
+<!-- Radio buttons section -->
+<div id="radio-buttons" class="radio-input">
+    <label class="label">
+        <input type="radio" id="value-1" checked="" name="value-radio" value="value-1" checked>
+        <a href="{% url 'projects1' %}" style="text-decoration:none"><p class="text">FST (Major projects)</p></a>
+    </label>
+    <label class="label">
+        <input type="radio" id="value-2" name="value-radio" value="value-2" >
+        <a href="{% url 'projects2' %}" style="text-decoration:none"><p class="text">FST (Mini projects)</p></a>
+    </label>
+    <label class="label">
+        <input type="radio" id="value-3" name="value-radio" value="value-3">
+        <a href="{% url 'projects3' %}" style="text-decoration:none"> <p class="text">ML Projects</p></a>
+    </label>
+</div>
+
+
+    <section class="contact-section animated">
+        <div class="contact-left">
+            <div class="contact-title animated">Contact Me</div>
+            <div class="contact-address animated">
+                4-77, Santhoshimatha Street,Tekkali,<br>
+                Srikakulam Dist,Andhra Pradesh.
+            </div>
+            <div class="contact-message animated">
+                Give me a ring... <span class="bi bi-telephone-fill" style="color:rgb(30, 255, 30);"></span>
+                <a href="tel:+919346450937" style="color: rgb(24, 246, 24);text-decoration:none;">9346450937</a>
+            </div>
+        </div>
+        <div class="contact-info-container">
+            <div class="contact-info">
+                <a href="https://www.instagram.com/eswarkarthikk/?hl=en" target="_blank"><img src="https://i.ibb.co/7p9c5yF/image-removebg-preview-37.png" alt="Instagram"></a>
+                <a href="https://www.linkedin.com/in/eswar-karthikk-1a93a7243/" target="_blank"><img src="https://i.ibb.co/SK2Gbnd/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://github.com/Eswarkarthikk" target="_blank"><img src="https://i.ibb.co/PMs3kfS/github.png" alt="GitHub"></a>
+                <a href="mailto:eswarkarthikk595@gmail.com"><img src="https://i.ibb.co/t3BhhVY/email.png" alt="Email"></a>
+            </div>
+            <div class="follow-text">Follow me to know more about me</div>
+        </div>
+    </section>
+    
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript to toggle radio buttons display
+        function toggleRadioButtons() {
+            var radioDiv = document.getElementById('radio-buttons');
+            if (radioDiv.style.display === 'none' || radioDiv.style.display === '') {
+                radioDiv.style.display = 'flex';
+            } else {
+                radioDiv.style.display = 'none';
+            }
+        }
+        document.querySelector('.menu-icon').addEventListener('click', function (event) {
+            event.stopPropagation(); // Prevent the click from bubbling up to the document
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+        
+        // Close the menu when clicking outside of it
+        document.addEventListener('click', function (event) {
+            const menu = document.querySelector('nav ul');
+            const menuIcon = document.querySelector('.menu-icon');
+            
+            // Check if the click was outside the menu and the menu icon
+            if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+                menu.classList.remove('show'); // Close the menu
+            }
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animated');
+        
+            function handleScroll() {
+                animatedElements.forEach(function(element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                        if (!element.classList.contains('icon-pop') && !element.classList.contains('fade-in')) {
+                            if (element.classList.contains('icon')) {
+                                element.classList.add('icon-pop');
+                            } else {
+                                element.classList.add('fade-in');
+                            }
+                        }
+                    } else {
+                        // Remove classes if element is out of view (optional)
+                        element.classList.remove('icon-pop');
+                        element.classList.remove('fade-in');
+                    }
+                });
+            }
+        
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Initial check
+        
+        });
+    </script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        var uniquePicturesSlider = new Swiper('.unique-pictures-slider', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            loop: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 169,
+                modifier: 2.2,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 3000, // Change slide every 3 seconds
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+</body>
+</html>
+

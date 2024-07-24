@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apps</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        html, body {
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 200%;
+                background: linear-gradient(to bottom, #080117, #002f38);
+                background-size: cover; /* Ensure the gradient covers the entire area */
+                color: white;
+                overflow-x: hidden;
+                overflow-y: scroll;
+                scrollbar-width: none; 
+                -ms-overflow-style: none; 
+                min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+            }
+        }
+            body::-webkit-scrollbar {
+                display: none; /* For Chrome, Safari, and Opera */
+            } 
+         
+        .navbar {
+            position: fixed;
+            top: 30px;
+            left: 200px;
+            right: 200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            padding-bottom: 100px;
+            background-color: transparent;
+            z-index: 1000;
+        }
+        
+        .logo {
+            height: 50px;
+            margin-left: 20px;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin-right: 20px;
+        }
+        
+        nav ul li a {
+            color: rgb(120, 220, 254);
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .menu-icon {
+            display: none;
+            font-size: 26px;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                left: 20px;
+                right: 20px;
+            }
+        
+            .logo {
+                margin-left: 0;
+            }
+        
+            nav ul {
+                display: none;
+                position: absolute;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                top: 60px;
+                right: 20px;
+                width: 200px;
+                padding: 0;
+                background-color: #072b32;
+                border-radius: 20px;
+                border-bottom: 2px solid rgb(141, 236, 251);
+                border-top:2px solid rgb(141, 236, 251) ;
+            }
+        
+            nav ul.show {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                padding: 10px 20px;
+                border-bottom: 2px solid rgba(3, 33, 37, 0.329) ;
+            }
+        
+            nav ul li:last-child {
+                border-bottom: none;
+            }
+        
+            nav ul li a {
+                color: rgb(77, 221, 246);
+               
+                text-decoration: none;
+            }
+            nav ul li a :hover{
+                color: rgb(244, 76, 219);
+            }
+            .menu-icon {
+                display: block;
+                cursor: pointer;
+            }
+        }
+        
+        
+        .contact-section {
+            display: flex;
+            flex-direction: column;
+            padding: 30px 20px;
+            margin: 20px 200px;
+            text-align: left;
+            font-size: 20px;
+            background: rgba(255, 255, 255, 0.043);
+            border-radius: 30px;
+        }
+        
+        @media (min-width: 768px) {
+            .contact-section {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+        }
+        
+        .contact-title {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .contact-left {
+            margin-left: 40px; /* Adjusted to move right */
+            flex: 1;
+        }
+        
+        .contact-address {
+            font-size: 20px;
+            margin-bottom: 20px;
+            margin-left: 40px; /* Adjusted to move right */
+        }
+        
+        .contact-message {
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 40px; /* Adjusted to move right */
+        }
+        
+        .contact-info-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+    
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center images */
+            gap: 20px;
+        }
+        
+        .contact-info a {
+            display: inline-block;
+        }
+        
+        .contact-info img {
+            width: 70px;
+            height: 70px;
+            margin: 10px;
+        }
+        
+        .follow-text {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            width: 100%; /* Ensure text spans the entire width */
+        }
+        
+        @media (max-width: 768px) {
+            .contact-section {
+                margin: 20px;
+                padding: 20px;
+                flex-direction: column;
+                align-items: flex-start; /* Align items to the start */
+            }
+        .contact-title{
+            font-size:26px;
+        }
+             .contact-message, .contact-address, .contact-info a {
+                text-align: left;
+                font-size: 16px;
+                margin-left: 0; /* Reset margin */
+            }
+    
+            .contact-info {
+                justify-content: center;
+                align-items: center;
+                padding-left: 20px;
+                gap: 10px;
+            }
+        
+            .contact-info img {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+            }
+        
+            .follow-text {
+                font-size: 16px;
+            }
+        }
+    </style>
+    <style>
+        /* General animation settings */
+        .animated {
+            opacity: 0;
+            transition: opacity 1s, transform 1s;
+        }
+        
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .icon-pop {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        /* Applying the animations */
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .icon-pop {
+            animation: popIn 1s ease-out forwards;
+        }
+        @media (max-width: 768px) {
+        
+            /* General animation settings */
+        .animated {
+            opacity: 0;
+            transition: opacity 1s, transform 1s;
+        }
+        
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .icon-pop {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        /* Applying the animations */
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .icon-pop {
+            animation: popIn 1s ease-out forwards;
+        }
+        }
+        </style>
+        <style>
+            .custom-radio-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%; /* Full width */
+              }
+              
+              .custom-radio-group {
+                display: flex;
+                flex-wrap: wrap;
+                border-radius: 0.5rem;
+                background-color: #4ad5ff25;
+                box-sizing: border-box;
+                box-shadow: 0 0 0px 5px rgba(0, 0, 0, 0.06);
+                padding: 5px; /* Increased padding */
+                width: 500px; /* Increased width */
+                font-size: 16px; /* Increased font size */
+              }
+              
+              .custom-radio {
+                flex: 1 1 auto;
+                text-align: center;
+                text-decoration: none; /* Remove underline from anchor */
+                color: inherit; /* Inherit text color */
+              }
+              
+              .custom-radio input {
+                display: none;
+              }
+              
+              .custom-radio .custom-name {
+                display: flex;
+                cursor: pointer;
+                align-items: center;
+                justify-content: center;
+                border-radius: 0.5rem;
+                font-weight: bolder;
+                font-size: large;
+                padding: 1rem 0; /* Increased padding */
+                border: none;
+                padding: 0.5rem 0;
+                color: rgb(255, 250, 250);
+                transition: all 0.3s ease-in-out; /* Smooth transition */
+              }
+              
+              .custom-radio input:checked + .custom-name {
+                background-color: #03516180;
+                font-weight: 600;
+              }
+              .custom-radio input:checked + .custom-name:hover {
+                background-color: #00181d;
+                
+              }
+              .custom-radio:hover .custom-name {
+                background-color: #3eb7fd5a; /* Change color on hover */
+            color:#f9f9fa  
+            }
+              
+        </style>
+        <style>
+            .acm-section {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+                margin: 20px auto;
+                max-width: 1200px;
+                box-sizing: border-box;
+              }
+              
+              .acm-image-container {
+                flex: 0 0 30%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                padding: 20px;
+              }
+              
+              .acm-image {
+                max-width: 100%;
+                border-radius: 10px;
+                transition: transform 0.3s ease;
+              }
+              
+              .acm-image:hover {
+                transform: scale(1.1);
+              }
+              
+              .acm-content {
+                flex: 1;
+                padding: 20px;
+              }
+              
+              .acm-title {
+                font-size: 24px;
+                margin-bottom: 10px;
+              }
+              
+              .acm-text {
+                margin-bottom: 20px;
+              }
+              
+              .acm-button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #6505a5;
+                color: white;
+                text-decoration: none;
+                font-weight: bolder;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+              }
+              
+              .acm-button:hover {
+                background-color: #39c4ff;
+                color:rgb(11, 0, 37);
+              }
+              
+              @media (max-width: 768px) {
+                .acm-section {
+                  flex-direction: column;
+                  align-items: center;
+                  text-align: center;
+                  padding: 10px;
+                }
+              
+                .acm-image-container, .acm-content {
+                  padding: 10px;
+                }
+              
+                .acm-title {
+                  font-size: 20px;
+                }
+              
+                .acm-text {
+                  font-size: 16px;
+                  text-align: justify;
+                }
+              
+                .acm-button {
+                  padding: 8px 16px;
+                }
+              }
+              
+        </style>
+
+        <style>
+            #unique-pictures {
+                max-width: 950px;
+                margin: 0 auto;
+                padding: 20px 20px;
+                background-color: #46cdfa17;
+                border-radius: 10px;
+            }
+            .image-slider {
+                margin-top: 20px;
+                
+            }
+            
+            .swiper-slide img {
+                width: 100%;
+                height: auto;
+                max-width: 900px; /* Limit width to 900px */
+                max-height: 500px; /* Limit height to 500px */
+                object-fit:contain; /* Ensure images maintain aspect ratio */
+                border-radius: 8px;
+               
+                transition: transform 0.3s ease; /* Smooth transition effect */
+            }
+            @media (max-width: 768px) {
+                .swiper-slide img {
+                width: 100%;
+                height: auto;
+                max-width: 900px; /* Limit width to 900px */
+                max-height: 300px; /* Limit height to 500px */
+                object-fit:cover; /* Ensure images maintain aspect ratio */
+                border-radius: 8px;
+            }}
+            .slider-container {
+                max-width: 900px; /* Adjust container width to match image width */
+                margin: 0 auto;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .swiper-pagination {
+                position: relative;
+                margin-top: 10px;
+            }
+            
+            .swiper-button-next,
+            .swiper-button-prev {
+                color: #00192da7;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                font-weight: bold;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            
+            .swiper-button-next {
+                right: 10px;
+            }
+            
+            .swiper-button-prev {
+                left: 10px;
+            }
+            
+        </style>
+        <style>
+            #centered-section {
+                padding: 40px 300px;
+                text-align: center;
+            }
+            
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
+            .section-title {
+                font-size: 28px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+            
+            .section-content {
+                text-align: justify;
+                font-size: 18px;
+                line-height: 1.6;
+            }
+            @media (max-width: 768px) {
+                #centered-section{
+                        padding: 40px 30px;
+                        text-align: center;
+                    }
+            }
+        </style>
+        <style>
+            .toggle-container {
+            display: flex;
+            
+            flex-wrap: wrap;
+            padding: 50px 10%; /* Increased padding from top and bottom, and more space from left and right */
+        }
+        
+        .toggle-section {
+            padding: 20px;
+            width: calc(33.33% - 20px); /* Adjust width for three sections with margin between */
+            margin-bottom: 20px; /* Increased margin bottom for better spacing */
+            border-radius: 30px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+         
+        }
+        
+        .toggle-section .toggle-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            cursor: pointer;
+            background: rgba(81, 220, 251, 0.075);
+            transition: background-color 0.3s ease;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        
+        .toggle-section .toggle-header:hover {
+            background-color: rgba(0, 123, 255, 0.034);
+        }
+        
+        .toggle-section .main-title {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .toggle-section .toggle-icon {
+            font-size: 24px;
+        }
+        
+        .toggle-section .toggle-content {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.5s ease-out, opacity 0.3s ease;
+            background-color: rgba(67, 209, 249, 0.039);
+            opacity: 0;
+        }
+        .toggle-content{
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        .toggle-section .toggle-content.active {
+            max-height: 800px;
+            opacity: 1;
+            padding: 20px;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .content-image {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            padding-top: 10px; /* Increased padding top for image */
+        }
+        
+        .content-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px; /* Rounded corners */
+            object-fit: cover;
+            
+        }
+        .content-text {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .content-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .content-description {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        @media (max-width: 1200px) {
+            .toggle-section {
+                width: calc(50% - 20px); /* Two sections per row on medium screens */
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .toggle-section {
+                width: 100%; /* Full width on small screens */
+            padding:5px;
+            margin-bottom: 10px;
+            }
+            .toggle-container {
+                padding: 10px; /* Increased padding from top and bottom, and more space from left and right */
+            }
+        }
+        </style>
+</head>
+<body>
+    <section class="navbar">
+        <img src="https://i.ibb.co/2MCsz0H/logo2.png" alt="Logo" class="logo">
+        <nav>
+            <ul class="hide">
+                <li><a href="{% url 'mainpage' %}" >Home</a></li>
+                <li><a href="{% url 'aboutme' %}">About Me</a></li>
+                <li><a href="{% url 'certifications' %}">Certifications</a></li>
+                <li><a href="{% url 'projects1' %}">Projects</a></li>
+                <li><a href="{% url 'experience1' %}" style="color:rgb(0, 58, 82);font-weight:bold">Experience</a></li>
+            </ul>
+        </nav>
+        <span class="menu-icon">&#9776;</span>
+    </section>
+  <section style="padding-bottom:170px"> </section>
+
+
+<div class="custom-radio-container animated">
+  <div class="custom-radio-group animated">
+    <label class="custom-radio">
+        <input type="radio" name="custom-radio" >
+        <a href="{% url 'experience2' %}" style="text-decoration:none"><span class="custom-name">As an Intern</span></a>
+      </label>
+    <label class="custom-radio">
+      <input type="radio" name="custom-radio" checked="">
+      <a href="{% url 'experience1' %}" style="text-decoration:none"><span class="custom-name">Acm Event Manager</span></a>
+    </label>
+    <label class="custom-radio">
+      <input type="radio" name="custom-radio">
+      <a href="{% url 'experience3' %}" style="text-decoration:none"><span class="custom-name">Other Expertise</span>
+    </label>
+  </div>
+</div>
+
+  
+<div class="acm-section animated">
+    <div class="acm-image-container">
+      <img src="my_pic.png" alt="ACM Image" class="acm-image">
+    </div>
+    <div class="acm-content animated">
+      <h2 class="acm-title">ACM Student Chapter</h2>
+      <p class="acm-text">Join our ACM Student Chapter to connect with peers, learn new skills, and participate in exciting events.</p>
+      <a href="https://your-acm-student-chapter-website.com" class="acm-button">Visit Our ACM Student Chapter</a>
+    </div>
+  </div>
+  
+  <section id="centered-section animated">
+    <div class="container animated">
+        <h2 class="section-title">Centered Section Title</h2>
+        <div class="section-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac nisi eu metus facilisis vehicula sed nec urna. Donec eget nisi nisi. Sed condimentum, purus a tristique fermentum, odio sem mollis sem, eu volutpat urna eros id nulla.</p>
+            <p>Nulla viverra, felis non tincidunt laoreet, justo sem dapibus felis, auctor malesuada mi velit nec leo. Integer et vehicula ligula. Nunc vel velit eu felis bibendum aliquet vel eget ex. Nam nec lectus a dolor consectetur ultricies.</p>
+            <p>Etiam fringilla lectus non tellus interdum, nec efficitur ligula vestibulum. Nullam commodo mi nec nisl fringilla efficitur. Donec malesuada ligula quis mi fermentum, at rhoncus augue gravida.</p>
+        </div>
+    </div>
+</section>
+
+  <section id="unique-pictures" class="animated">
+    <div class="slider-container">
+        <div class="swiper unique-pictures-slider animated">
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide unique-pictures-slide">
+                    <div class="unique-pictures-slide-img">
+                        <img src="my_pic.png" alt="Picture 1">
+                    </div>
+                </div>
+                <div class="swiper-slide unique-pictures-slide">
+                    <div class="unique-pictures-slide-img">
+                        <img src="logo2.png" alt="Picture 2">
+                    </div>
+                </div>
+                <div class="swiper-slide unique-pictures-slide">
+                    <div class="unique-pictures-slide-img">
+                        <img src="https://via.placeholder.com/400" alt="Picture 3">
+                    </div>
+                </div>
+                <div class="swiper-slide unique-pictures-slide">
+                    <div class="unique-pictures-slide-img">
+                        <img src="https://via.placeholder.com/500" alt="Picture 4">
+                    </div>
+                </div>
+                <div class="swiper-slide unique-pictures-slide">
+                    <div class="unique-pictures-slide-img">
+                        <img src="https://via.placeholder.com/600" alt="Picture 5">
+                    </div>
+                </div>
+                <div class="swiper-slide unique-pictures-slide">
+                    <div class="unique-pictures-slide-img">
+                        <img src="https://via.placeholder.com/700" alt="Picture 6">
+                    </div>
+                </div>
+                <!-- Add more slides as needed -->
+            </div>
+            <!-- Pagination and Navigation -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+</section>
+
+<div class="toggle-container animated">
+    <section class="toggle-section animated">
+        <div class="toggle-header">
+            <div class="main-title">Section Title 1</div>
+            <div class="toggle-icon"><i class="bi bi-chevron-down"></i></div>
+        </div>
+        <div class="toggle-content">
+            <div class="content-wrapper">
+                <div class="content-image">
+                    <img src="https://via.placeholder.com/150x100" alt="Description" class="img-fluid rounded-image">
+                </div>
+                <div class="content-text">
+                    <h2 class="content-title">Image Title 1</h2>
+                    <p class="content-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor elit non massa congue, ac suscipit eros malesuada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="toggle-section animated">
+        <div class="toggle-header">
+            <div class="main-title">Section Title 1</div>
+            <div class="toggle-icon"><i class="bi bi-chevron-down"></i></div>
+        </div>
+        <div class="toggle-content">
+            <div class="content-wrapper">
+                <div class="content-image">
+                    <img src="https://via.placeholder.com/150x100" alt="Description" class="img-fluid rounded-image">
+                </div>
+                <div class="content-text">
+                    <h2 class="content-title">Image Title 1</h2>
+                    <p class="content-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor elit non massa congue, ac suscipit eros malesuada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="toggle-section animated">
+        <div class="toggle-header">
+            <div class="main-title">Section Title 1</div>
+            <div class="toggle-icon"><i class="bi bi-chevron-down"></i></div>
+        </div>
+        <div class="toggle-content">
+            <div class="content-wrapper">
+                <div class="content-image">
+                    <img src="https://via.placeholder.com/150x100" alt="Description" class="img-fluid rounded-image">
+                </div>
+                <div class="content-text">
+                    <h2 class="content-title">Image Title 1</h2>
+                    <p class="content-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor elit non massa congue, ac suscipit eros malesuada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="toggle-section animated">
+        <div class="toggle-header">
+            <div class="main-title">Section Title 2</div>
+            <div class="toggle-icon"><i class="bi bi-chevron-down"></i></div>
+        </div>
+        <div class="toggle-content">
+            <div class="content-wrapper">
+                <div class="content-image">
+                    <img src="https://via.placeholder.com/150x100" alt="Description" class="img-fluid rounded-image">
+                </div>
+                <div class="content-text">
+                    <h2 class="content-title">Image Title 2</h2>
+                    <p class="content-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor elit non massa congue, ac suscipit eros malesuada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="toggle-section animated">
+        <div class="toggle-header">
+            <div class="main-title">Section Title 3</div>
+            <div class="toggle-icon"><i class="bi bi-chevron-down"></i></div>
+        </div>
+        <div class="toggle-content">
+            <div class="content-wrapper">
+                <div class="content-image">
+                    <img src="https://via.placeholder.com/150x100" alt="Description" class="img-fluid rounded-image">
+                </div>
+                <div class="content-text">
+                    <h2 class="content-title">Image Title 3</h2>
+                    <p class="content-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor elit non massa congue, ac suscipit eros malesuada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+    <section class="contact-section animated">
+        <div class="contact-left">
+            <div class="contact-title animated">Contact Me</div>
+            <div class="contact-address animated">
+                4-77, Santhoshimatha Street,Tekkali,<br>
+                Srikakulam Dist,Andhra Pradesh.
+            </div>
+            <div class="contact-message animated">
+                Give me a ring... <span class="bi bi-telephone-fill" style="color:rgb(30, 255, 30);"></span>
+                <a href="tel:+919346450937" style="color: rgb(24, 246, 24);text-decoration:none;">9346450937</a>
+            </div>
+        </div>
+        <div class="contact-info-container">
+            <div class="contact-info">
+                <a href="https://www.instagram.com/eswarkarthikk/?hl=en" target="_blank"><img src="https://i.ibb.co/7p9c5yF/image-removebg-preview-37.png" alt="Instagram"></a>
+                <a href="https://www.linkedin.com/in/eswar-karthikk-1a93a7243/" target="_blank"><img src="https://i.ibb.co/SK2Gbnd/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://github.com/Eswarkarthikk" target="_blank"><img src="https://i.ibb.co/PMs3kfS/github.png" alt="GitHub"></a>
+                <a href="mailto:eswarkarthikk595@gmail.com"><img src="https://i.ibb.co/t3BhhVY/email.png" alt="Email"></a>
+            </div>
+            <div class="follow-text">Follow me to know more about me</div>
+        </div>
+    </section>
+    
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript to toggle radio buttons display
+        document.querySelector('.menu-icon').addEventListener('click', function (event) {
+            event.stopPropagation(); // Prevent the click from bubbling up to the document
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+        
+        // Close the menu when clicking outside of it
+        document.addEventListener('click', function (event) {
+            const menu = document.querySelector('nav ul');
+            const menuIcon = document.querySelector('.menu-icon');
+            
+            // Check if the click was outside the menu and the menu icon
+            if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+                menu.classList.remove('show'); // Close the menu
+            }
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animated');
+        
+            function handleScroll() {
+                animatedElements.forEach(function(element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                        if (!element.classList.contains('icon-pop') && !element.classList.contains('fade-in')) {
+                            if (element.classList.contains('icon')) {
+                                element.classList.add('icon-pop');
+                            } else {
+                                element.classList.add('fade-in');
+                            }
+                        }
+                    } else {
+                        // Remove classes if element is out of view (optional)
+                        element.classList.remove('icon-pop');
+                        element.classList.remove('fade-in');
+                    }
+                });
+            }
+        
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Initial check
+        
+        });
+
+        
+    </script>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script>
+    var uniquePicturesSlider = new Swiper('.unique-pictures-slider', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        loop: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 169,
+            modifier: 2.2,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            delay: 5000, // Change slide every 5 seconds
+            disableOnInteraction: false,
+        },
+    });
+</script>
+<script>
+    document.querySelectorAll('.toggle-header').forEach(header => {
+        header.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            const icon = this.querySelector('.toggle-icon i');
+    
+            if (content.classList.contains('active')) {
+                content.style.maxHeight = '0px';
+                content.style.opacity = '0';
+                icon.classList.replace('bi-chevron-up', 'bi-chevron-down');
+                content.classList.remove('active');
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.style.opacity = '1';
+                icon.classList.replace('bi-chevron-down', 'bi-chevron-up');
+                content.classList.add('active');
+            }
+        });
+    });
+</script>
+</body>
+</html>
+

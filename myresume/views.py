@@ -1,103 +1,76 @@
-import os
-import shutil
-import base64
-import tempfile
 from django.shortcuts import render
 from django.http import HttpResponseServerError
-from .forms import UploadImageForm
-from gradio_client import Client, handle_file
-from PIL import Image
-
-# Initialize the Gradio client with the correct endpoint URL
-
-
-# def compress_image(image_file, max_size_bytes=2 * 1024 * 1024):
-#     """Compress image to fit within the specified byte size."""
-#     img = Image.open(image_file)
-    
-#     # Calculate the current file size
-#     original_size = os.path.getsize(image_file)
-    
-#     # If already within the limit, return the original file
-#     if original_size <= max_size_bytes:
-#         return image_file
-    
-#     # Calculate the compression ratio
-#     ratio = (max_size_bytes / float(original_size)) ** 0.5
-    
-#     # Resize the image
-#     img = img.resize((int(img.width * ratio), int(img.height * ratio)), Image.LANCZOS)
-    
-#     # Save the image to a temporary file
-#     buffer = tempfile.NamedTemporaryFile(delete=False, suffix='.jpg')
-#     img.save(buffer, format='JPEG', quality=85)
-#     buffer.close()
-    
-#     return buffer.name
-
-# def upload_image(request):
-#     if request.method == 'POST':
-#         client = Client("https://eswarkarthikk-object-detection.hf.space")
-#         form = UploadImageForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             try:
-#                 # Create a temporary directory
-#                 temp_dir = tempfile.mkdtemp()
-
-#                 # Clear any existing files in the temporary directory
-#                 for filename in os.listdir(temp_dir):
-#                     file_path = os.path.join(temp_dir, filename)
-#                     try:
-#                         if os.path.isfile(file_path) or os.path.islink(file_path):
-#                             os.unlink(file_path)
-#                         elif os.path.isdir(file_path):
-#                             shutil.rmtree(file_path)
-#                     except Exception as e:
-#                         print(f"Failed to delete {file_path}. Reason: {e}")
-
-#                 # Get the uploaded image file
-#                 image_file = request.FILES['image']
-
-#                 # Save the uploaded image to a temporary file
-#                 temp_file_path = os.path.join(temp_dir, 'uploaded_image.jpg')
-#                 with open(temp_file_path, 'wb') as temp_file:
-#                     for chunk in image_file.chunks():
-#                         temp_file.write(chunk)
-
-#                 # Compress the image before sending to the API
-#                 compressed_image_path = compress_image(temp_file_path)
-
-#                 # Convert the original image to base64
-#                 with open(temp_file_path, 'rb') as img_file:
-#                     original_image_base64 = base64.b64encode(img_file.read()).decode('utf-8')
-
-#                 result = client.predict(image=handle_file(compressed_image_path))
-
-#                 # Check if the result is a file path
-#                 if isinstance(result, str) and os.path.isfile(result):
-#                     # Read the predicted image and convert to base64
-#                     with open(result, 'rb') as img_file:
-#                         predicted_image_base64 = base64.b64encode(img_file.read()).decode('utf-8')
-
-#                     # Pass the base64 encoded images to the template
-#                     return render(request, 'index.html', {
-#                         'original_image_base64': f"data:image/jpeg;base64,{original_image_base64}",
-#                         'predicted_image_base64': f"data:image/jpeg;base64,{predicted_image_base64}"
-#                     })
-#                 else:
-#                     raise ValueError("Unexpected response format from Gradio API")
-
-#             except Exception as e:
-#                 return HttpResponseServerError(f"Error: {str(e)}")
-
-#             finally:
-#                 # Clean up the temporary directory
-#                 shutil.rmtree(temp_dir, ignore_errors=True)
-
-#     else:
-#         form = UploadImageForm()
-
-#     return render(request, 'index.html', {'form': form})
-
 def mainpage(request):
     return render(request, 'homepage.html')
+
+def projects1(request):
+    return render(request, 'projects.html')
+def projects2(request):
+    return render(request, 'apps.html')
+def experience1(request):
+    return render(request, 'Experience.html')
+def experience2(request):
+    return render(request, 'intern.html')
+def experience3(request):
+    return render(request, 'experience2.html')
+def aboutme(request):
+    return render(request,'me.html')
+def certifications(request):
+    return render(request,'certifications.html')
+# views.py
+
+import pandas as pd
+from django.shortcuts import render
+
+def projects3(request):
+    data = {
+        'section title':[
+            'Object detection',
+            ''
+        ],
+        'title': [
+            'Object Detection using Faster RCNN',
+            'Project Two',
+            'Project Three',
+            'Project Four'
+        ],
+        'description': [
+            'This is a deep learning project developed in reigion based convolutional network. This model is trained on Pascal Voc 2012 dataset it can predict 20 classes that are | aeroplane | bicycle | bird | boat | bottle | bus | car | cat | chair | cow | dining table | dog | horse | motorbike | person | potted plant | sheep | sofa | train | tv/monitor |....This model is deployed in Hugging face and by using its api i have deployed another one so you can visit directly in my web . please feel free to go through my git repo.',
+            'This is a description for Project Two.',
+            'This is a description for Project Three.',
+            'This is a description for Project Four.'
+        ],
+
+        'image_link': [
+            'https://i.ibb.co/37jf8hb/image.png',
+            'https://example.com/image2.jpg',
+            'https://example.com/image3.jpg',
+            'https://example.com/image4.jpg'
+        ],
+        'github_link': [
+            'https://github.com/Eswarkarthikk/Ml-projects-/blob/main/r-cnn.ipynb',
+            'https://github.com/user/project2',
+            'https://github.com/user/project3',
+            'https://github.com/user/project4'
+        ],
+        'weblink': [
+            'https://objectdetection-weld.vercel.app/',
+            'https://example.com/test2',
+            'https://example.com/test3',
+            'https://example.com/test4'
+        ],
+        'hugging_face_link': [
+            'https://eswarkarthikk-object-detection.hf.space',
+            'https://huggingface.co/user/project2',
+            'https://huggingface.co/user/project3',
+            'https://huggingface.co/user/project4'
+        ]
+    }
+    
+    df = pd.DataFrame(data)
+    
+    # Convert DataFrame to a list of dictionaries
+    projects = df.to_dict(orient='records')
+    
+    # Render the template with the projects data
+    return render(request, 'mlprojects.html', {'projects': projects})
