@@ -26,7 +26,9 @@ def projects3(request):
     data = {
         'section title':[
             'Object detection',
-            ''
+            '',
+        '',
+        ''
         ],
         'title': [
             'Object Detection using Faster RCNN',
