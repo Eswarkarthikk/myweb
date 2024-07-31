@@ -18,7 +18,7 @@
                 height: 200%;
                 background: linear-gradient(to bottom, #080117, #002f38);
                 background-size: cover; /* Ensure the gradient covers the entire area */
-                color: white;
+                color: rgba(255, 255, 255, 0.865);
                 overflow-x: hidden;
                 overflow-y: scroll;
                 scrollbar-width: none; 
@@ -402,7 +402,7 @@
         }
         .rounded-image {
             width: 500px;
-            height: 350px; /* Ensuring image height adjusts proportionally */
+            height: auto; /* Ensuring image height adjusts proportionally */
             border-radius: 15px;
             object-fit: cover;
         }
@@ -500,9 +500,12 @@
     
         @media (max-width: 500px) {
             .unique-pictures-slide {
-                width: 20rem !important;
+                width: 28rem !important;
                 height: 20rem !important;
                 margin-right: 0.5rem; /* Adjusted margin for smaller screens */
+            }
+            .swiper-pagination-bullet {
+                display: inline;
             }
         }
     
@@ -515,7 +518,6 @@
     
         .swiper-pagination {
             position: relative;
-            margin-top: 1rem; /* Adjusted margin as needed */
             text-align: center;
         }
     
@@ -524,7 +526,6 @@
             height: 8px;
             background: #fff;
             opacity: 0.5;
-            margin: 0 4px;
             border-radius: 50%;
         }
     

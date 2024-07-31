@@ -8,7 +8,7 @@ def projects1(request):
         {
             "main_title": "Resucraft",
             "description": "Resucraft is a full-stack web development project designed to create various resumes online by simply filling out a form. Users can update, delete, and create resumes through our web application, which utilizes Django for the backend and PostgreSQL for storing user data and login information. Our team dedicated significant time to this project, with my contributions including leading the design of the Django framework, managing integration, establishing database connectivity, and conducting project testing. I developed code for models and views, enabling users to edit and add information, while Srikar assisted with database management and contributed to the login and signup pages. Vivek focused on creating an interactive UI for various pages, and Bhavani designed some templates.",
-            "image": "https://i.ibb.co/DYLJ17j/image.png",
+            "image": "https://i.ibb.co/Tbwt72K/image.png",
             "git_link": "https://github.com/Eswarkarthikk/Resucraft",
             "weblink": "https://resucraft.vercel.app/",
              "snapshots": [
@@ -40,8 +40,8 @@ def projects1(request):
             ]
         },
         {
-            "main_title": "Project Title 2",
-            "description": "Description for project 2.",
+            "main_title": "SENTIMAP",
+            "description": "Sentimap is a web scraping project developed during the Smart India Hackathon. It takes a YouTube video link as input, scrapes all the comments, and analyzes them using NLP to provide various insights about the video. Additionally, it utilizes public data to make predictions for elections and detects vulgar messages in the comments.",
             "image": "https://example.com/main-image2.jpg",
             "git_link": "https://github.com/username/project2",
             "weblink": "https://example.com/project2",
