@@ -17,7 +17,7 @@
                 height: 200%;
                 background: linear-gradient(to bottom, #080117, #002f38);
                 background-size: cover; /* Ensure the gradient covers the entire area */
-                color: white;
+                color: rgba(255, 255, 255, 0.829);
                 overflow-x: hidden;
                 overflow-y: scroll;
                 scrollbar-width: none; 
@@ -393,7 +393,7 @@
 }
         .section-image {
             flex: 0 0 40%; /* Increased image occupancy to 40% */
-            max-width: 40%;
+            max-width: 100%;
             padding: 15px;
             order: 2; /* Adjusting order to place image on the right */
         }
@@ -407,7 +407,7 @@
         }
         .rounded-image {
             width: 500px;
-            height: 350px; /* Ensuring image height adjusts proportionally */
+            height: auto; /* Ensuring image height adjusts proportionally */
             border-radius: 15px;
             object-fit: cover;
         }
@@ -424,6 +424,7 @@
         .btn-github {
             background-color: white;
             color: black;
+            border:1px solid black;
             font-weight: bold;
             border: none;
         }
@@ -500,8 +501,8 @@
         }
     
         .unique-pictures-slide {
-            width: 20rem; /* Larger width for landscape images */
-            height: 20rem; /* Larger height for landscape images */
+            width: 40rem; /* Larger width for landscape images */
+            height: 30rem; /* Larger height for landscape images */
             position: relative;
             overflow: hidden;
             margin-right: 1rem; /* Added margin for spacing between slides */
@@ -509,7 +510,7 @@
     
         @media (max-width: 500px) {
             .unique-pictures-slide {
-                width: 20rem !important;
+                width: 30rem !important;
                 height: 20rem !important;
                 margin-right: 0.5rem; /* Adjusted margin for smaller screens */
             }
@@ -805,13 +806,16 @@ margin-bottom: 10px;
         <h2 class="centered-title">Android Applications</h2>
         <div class="flex-content-section">
             <div class="flex-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor elit non massa congue, ac suscipit eros malesuada. Integer dignissim sem nec sapien laoreet, vitae accumsan neque ultrices. Vivamus in ante id risus sollicitudin tristique et eu nisi. Nam ullamcorper purus non eros posuere, at venenatis lacus condimentum. Aenean nec gravida justo. Duis eget nunc fermentum, vulputate felis ac, cursus lacus. Praesent convallis felis eu magna vulputate, a sodales sapien pharetra. Integer laoreet metus id sapien convallis, non interdum nisl consequat. Proin consectetur felis id malesuada facilisis. Nullam vel orci in felis porttitor iaculis sit amet ut tortor. Nam imperdiet neque vel lorem dapibus, vel dapibus odio pellentesque. Curabitur vehicula orci eu arcu iaculis vestibulum. Sed euismod purus vitae nunc mollis ultricies. Maecenas ut libero ut lorem cursus fermentum.</p>
-            </div>
+                <p>As part of my Codsoft internship, I built two Android applications. This experience allowed me to deepen my understanding of mobile app development 
+                    and enhance my coding skills. Throughout the internship, I focused on various aspects of app development and learned java, kotlin and xml during prtoject building, including user interface design, functionality
+                     implementation, and testing. The hands-on experience I gained during this period was invaluable, as it provided me with practical knowledge that I can apply
+                      to future projects in the field of Android development.</p> </div>
             <div class="flex-image">
-                <img src="https://via.placeholder.com/200" alt="Description" class="img-fluid rounded-image">
+                <img src="https://i.ibb.co/VjyHJV1/Screenshot-2024-07-31-163222.png" alt="Description" class="img-fluid rounded-image">
             </div>
         </div>
     </div>  
+    
 </section>
 
 <section class="android-apps-section">
@@ -819,24 +823,24 @@ margin-bottom: 10px;
         <h2 class="centered-title">Test my Apps</h2>
         <div class="cards-section">
             <div class="card">
-                <img src="https://via.placeholder.com/300x500" alt="Android App 1" class="img-fluid rounded-cards">
+                <img src="https://i.ibb.co/qgt4fLB/calculator.jpg" alt="Android App 1" class="img-fluid rounded-cards">
                 <div class="card-buttons">
                     <a href="#" class="btn btn-primary btn-lg btn-github">
-                        <i class="bi bi-github"></i> Get code
+                        <i class="bi bi-github"></i> Code
                     </a>
-                    <a href="#" class="btn btn-secondary btn-lg btn-download">
-                        Download <i class="bi bi-download"></i>
+                    <a href="https://github.com/Eswarkarthikk/Codsoft/blob/master/Task_2_Calculator_App/Calculator.apk" class="btn btn-secondary btn-lg btn-download">
+                        Download<i class="bi bi-download"></i>
                     </a>
                 </div>
             </div>
             <div class="card">
-                <img src="https://via.placeholder.com/300x500" alt="Android App 2" class="img-fluid rounded-card">
+                <img src="https://i.ibb.co/yN5cYDK/flash-light.jpg" alt="Android App 2" class="img-fluid rounded-card">
                 <div class="card-buttons">
-                    <a href="#" class="btn btn-primary btn-lg btn-github">
-                        <i class="bi bi-github"></i> Get code
+                    <a href="https://github.com/Eswarkarthikk/Codsoft/tree/master/Task_1_Flashlight_App" class="btn btn-primary btn-lg btn-github">
+                        <i class="bi bi-github"></i> Code
                     </a>
-                    <a href="#" class="btn btn-secondary btn-lg btn-download">
-                        Download <i class="bi bi-download"></i>
+                    <a href="https://drive.usercontent.google.com/download?id=1H6oHEVU5Vaht0oOCdZM5Y8WAfs0TNCzY&export=download&authuser=0" class="btn btn-secondary btn-lg btn-download">
+                        Download<i class="bi bi-download"></i>
                     </a>
                 </div>
             </div>
@@ -844,131 +848,39 @@ margin-bottom: 10px;
     </div>
 </section>
 
-
-
-
-  <section class="project animated">
-    <div class="container mt-5 animated">
-        <div class="section">
-            <div class="section-content animated" >
-                <h2 class="section-title animated" style="font-size: 36px; font-weight: 600;">Section Title</h2>
-                <p class="section-text animated">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor elit non massa congue, ac suscipit eros malesuada. Integer dignissim sem nec sapien laoreet, vitae accumsan neque ultrices. Vivamus in ante id risus sollicitudin tristique et eu nisi. Nam ullamcorper purus non eros posuere, at venenatis lacus condimentum. Aenean nec gravida justo. Duis eget nunc fermentum, vulputate felis ac, cursus lacus. Praesent convallis felis eu magna vulputate, a sodales sapien pharetra. Integer laoreet metus id sapien convallis, non interdum nisl consequat. Proin consectetur felis id malesuada facilisis. Nullam vel orci in felis porttitor iaculis sit amet ut tortor. Nam imperdiet neque vel lorem dapibus, vel dapibus odio pellentesque. Curabitur vehicula orci eu arcu iaculis vestibulum. Sed euismod purus vitae nunc mollis ultricies. Maecenas ut libero ut lorem cursus fermentum.</p>
-                <div class="buttons animated">
-                    <a href="#" class="btn btn-primary btn-lg btn-github">
-                        <i class="bi bi-github"></i> Get code
-                    </a>
-                    <a href="#" class="btn btn-secondary btn-lg btn-share">
-                        Visit <i class="bi bi-send-fill"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="section-image animated">
-                <img src="https://via.placeholder.com/200" alt="Description" class="img-fluid rounded-image" style="height:auto;width:100%;">
-            </div>
-        </div>
-    </div>
-    <section id="unique-pictures animated">
-        <h2 class="snapshots animated">Project SnapShots</h2>
-        <div class="slider-container">
-            <div class="swiper unique-pictures-slider animated">
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide unique-pictures-slide">
-                        <div class="unique-pictures-slide-img">
-                            <img src="https://via.placeholder.com/200" alt="pictures">
-                        </div>
-                    </div>
-                    <div class="swiper-slide unique-pictures-slide">
-                        <div class="unique-pictures-slide-img">
-                            <img src="https://via.placeholder.com/200" alt="pictures">
-                        </div>
-                    </div>                    <div class="swiper-slide unique-pictures-slide">
-                        <div class="unique-pictures-slide-img">
-                            <img src="https://via.placeholder.com/300" alt="pictures">
-                        </div>
-                    </div>                    <div class="swiper-slide unique-pictures-slide">
-                        <div class="unique-pictures-slide-img">
-                            <img src="https://via.placeholder.com/400" alt="pictures">
-                        </div>
-                    </div>                    <div class="swiper-slide unique-pictures-slide">
-                        <div class="unique-pictures-slide-img">
-                            <img src="https://via.placeholder.com/500" alt="pictures">
-                        </div>
-                    </div>                    <div class="swiper-slide unique-pictures-slide">
-                        <div class="unique-pictures-slide-img">
-                            <img src="https://via.placeholder.com/600" alt="pictures">
-                        </div>
-                    </div>                    <div class="swiper-slide unique-pictures-slide">
-                        <div class="unique-pictures-slide-img">
-                            <img src="https://via.placeholder.com/700" alt="pictures">
-                        </div>
-                    </div>
-                    <!-- Add more slides as needed -->
-                </div>
-                <!-- Pagination and Navigation -->
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </div>
-    </section>   
-</section>
+{% for project in projects %}
 <section class="project animated">
     <div class="container mt-5 animated">
         <div class="section">
             <div class="section-content animated">
-                <h2 class="section-title animated" style="font-size: 36px; font-weight: 600;">Section Title</h2>
-                <p class="section-text animated">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor elit non massa congue, ac suscipit eros malesuada. Integer dignissim sem nec sapien laoreet, vitae accumsan neque ultrices. Vivamus in ante id risus sollicitudin tristique et eu nisi. Nam ullamcorper purus non eros posuere, at venenatis lacus condimentum. Aenean nec gravida justo. Duis eget nunc fermentum, vulputate felis ac, cursus lacus. Praesent convallis felis eu magna vulputate, a sodales sapien pharetra. Integer laoreet metus id sapien convallis, non interdum nisl consequat. Proin consectetur felis id malesuada facilisis. Nullam vel orci in felis porttitor iaculis sit amet ut tortor. Nam imperdiet neque vel lorem dapibus, vel dapibus odio pellentesque. Curabitur vehicula orci eu arcu iaculis vestibulum. Sed euismod purus vitae nunc mollis ultricies. Maecenas ut libero ut lorem cursus fermentum.</p>
+                <h2 class="section-title animated" style="font-size: 36px; font-weight: 600;">{{ project.main_title }}</h2>
+                <p class="section-text animated">{{ project.description }}</p>
                 <div class="buttons animated">
-                    <a href="#" class="btn btn-primary btn-lg btn-github">
-                        <i class="bi bi-github"></i> Get Code
-                    <a href="#" class="btn btn-secondary btn-lg btn-share">
-                        Visit <i class="bi bi-send-fill"></i>
+                    <a href="{{ project.git_link }}" class="btn btn-primary btn-lg btn-github">
+                        <i class="bi bi-github"></i> Code 
+                    </a>
+                    <a href="{{ project.weblink }}" class="btn btn-secondary btn-lg btn-share">
+                        Try it <i class="bi bi-send-fill"></i>
                     </a>
                 </div>
             </div>
             <div class="section-image animated">
-                <img src="https://via.placeholder.com/200" alt="Description" class="img-fluid rounded-image">
+                <img src="{{ project.image }}" alt="{{ project.main_title }}" class="img-fluid rounded-image">
             </div>
         </div>
     </div>
-    <section id="unique-pictures animated">
+    <section id="unique-pictures" class="animated">
         <h2 class="snapshots animated">Project SnapShots</h2>
         <div class="slider-container">
             <div class="swiper unique-pictures-slider animated">
                 <div class="swiper-wrapper">
-                    <!-- Slides -->
+                    {% for snapshot in project.snapshots %}
                     <div class="swiper-slide unique-pictures-slide">
                         <div class="unique-pictures-slide-img">
-                            <img src="https://via.placeholder.com/200" alt="pictures">
+                            <img src="{{ snapshot }}" alt="Project Snapshot" class="img-fluid">
                         </div>
                     </div>
-                    <div class="swiper-slide unique-pictures-slide">
-                        <div class="unique-pictures-slide-img">
-                            <img src="https://via.placeholder.com/200" alt="pictures">
-                        </div>
-                    </div>                    <div class="swiper-slide unique-pictures-slide">
-                        <div class="unique-pictures-slide-img">
-                            <img src="https://via.placeholder.com/300" alt="pictures">
-                        </div>
-                    </div>                    <div class="swiper-slide unique-pictures-slide">
-                        <div class="unique-pictures-slide-img">
-                            <img src="https://via.placeholder.com/400" alt="pictures">
-                        </div>
-                    </div>                    <div class="swiper-slide unique-pictures-slide">
-                        <div class="unique-pictures-slide-img">
-                            <img src="https://via.placeholder.com/500" alt="pictures">
-                        </div>
-                    </div>                    <div class="swiper-slide unique-pictures-slide">
-                        <div class="unique-pictures-slide-img">
-                            <img src="https://via.placeholder.com/600" alt="pictures">
-                        </div>
-                    </div>                    <div class="swiper-slide unique-pictures-slide">
-                        <div class="unique-pictures-slide-img">
-                            <img src="https://via.placeholder.com/700" alt="pictures">
-                        </div>
-                    </div>
-                    <!-- Add more slides as needed -->
+                    {% endfor %}
                 </div>
                 <!-- Pagination and Navigation -->
                 <div class="swiper-pagination"></div>
@@ -978,73 +890,7 @@ margin-bottom: 10px;
         </div>
     </section>   
 </section>
-<section class="project animated">
-    <div class="container mt-5 animated">
-        <div class="section">
-            <div class="section-content animated">
-                <h2 class="section-title animated" style="font-size: 36px; font-weight: 600;">Section Title</h2>
-                <p class="section-text animated">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor elit non massa congue, ac suscipit eros malesuada. Integer dignissim sem nec sapien laoreet, vitae accumsan neque ultrices. Vivamus in ante id risus sollicitudin tristique et eu nisi. Nam ullamcorper purus non eros posuere, at venenatis lacus condimentum. Aenean nec gravida justo. Duis eget nunc fermentum, vulputate felis ac, cursus lacus. Praesent convallis felis eu magna vulputate, a sodales sapien pharetra. Integer laoreet metus id sapien convallis, non interdum nisl consequat. Proin consectetur felis id malesuada facilisis. Nullam vel orci in felis porttitor iaculis sit amet ut tortor. Nam imperdiet neque vel lorem dapibus, vel dapibus odio pellentesque. Curabitur vehicula orci eu arcu iaculis vestibulum. Sed euismod purus vitae nunc mollis ultricies. Maecenas ut libero ut lorem cursus fermentum.</p>
-                <div class="buttons animated">
-                    <a href="#" class="btn btn-primary btn-lg btn-github">
-                        <i class="bi bi-github"></i> See Code
-                    </a>
-                    <a href="#" class="btn btn-secondary btn-lg btn-share">
-                        Visit <i class="bi bi-send-fill"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="section-image animated">
-                <img src="https://via.placeholder.com/200" alt="Description" class="img-fluid rounded-image">
-            </div>
-        </div>
-    </div>
-    <section id="unique-pictures animated">
-        <h2 class="snapshots animated">Project SnapShots</h2>
-        <div class="slider-container">
-            <div class="swiper unique-pictures-slider animated">
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide unique-pictures-slide">
-                        <div class="unique-pictures-slide-img">
-                            <img src="https://via.placeholder.com/200" alt="pictures">
-                        </div>
-                    </div>
-                    <div class="swiper-slide unique-pictures-slide">
-                        <div class="unique-pictures-slide-img">
-                            <img src="https://via.placeholder.com/200" alt="pictures">
-                        </div>
-                    </div>                    <div class="swiper-slide unique-pictures-slide">
-                        <div class="unique-pictures-slide-img">
-                            <img src="https://via.placeholder.com/300" alt="pictures">
-                        </div>
-                    </div>                    <div class="swiper-slide unique-pictures-slide">
-                        <div class="unique-pictures-slide-img">
-                            <img src="https://via.placeholder.com/400" alt="pictures">
-                        </div>
-                    </div>                    <div class="swiper-slide unique-pictures-slide">
-                        <div class="unique-pictures-slide-img">
-                            <img src="https://via.placeholder.com/500" alt="pictures">
-                        </div>
-                    </div>                    <div class="swiper-slide unique-pictures-slide">
-                        <div class="unique-pictures-slide-img">
-                            <img src="https://via.placeholder.com/600" alt="pictures">
-                        </div>
-                    </div>                    <div class="swiper-slide unique-pictures-slide">
-                        <div class="unique-pictures-slide-img">
-                            <img src="https://via.placeholder.com/700" alt="pictures">
-                        </div>
-                    </div>
-                    <!-- Add more slides as needed -->
-                </div>
-                <!-- Pagination and Navigation -->
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </div>
-    </section>   
-</section>
-
+{% endfor %}
 <div class="floating-icon" onclick="toggleRadioButtons()">
     <i class="bi bi-menu-button-wide"></i>
 </div>

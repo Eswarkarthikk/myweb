@@ -17,7 +17,7 @@
                 height: 200%;
                 background: linear-gradient(to bottom, #080117, #002f38);
                 background-size: cover; /* Ensure the gradient covers the entire area */
-                color: white;
+                color: rgba(255, 255, 255, 0.84);
                 overflow-x: hidden;
                 overflow-y: scroll;
                 scrollbar-width: none; 
@@ -488,7 +488,7 @@
                 max-width: 950px;
                 margin: 0 auto;
                 padding: 20px 20px;
-                background-color: #46cdfa17;
+                background-color: #fcfeff00;
                 border-radius: 10px;
             }
             .image-slider {
@@ -529,7 +529,7 @@
             
             .swiper-button-next,
             .swiper-button-prev {
-                color: #00192da7;
+                color: #ffffffa7;
                 border-radius: 50%;
                 width: 30px;
                 height: 30px;
@@ -566,13 +566,16 @@
             
             .section-content {
                 text-align: justify;
-                font-size: 18px;
+                font-size: 1.4em;
                 line-height: 1.6;
             }
             @media (max-width: 768px) {
                 #centered-section{
                         padding: 40px 30px;
                         text-align: center;
+                    }
+                    .section-content {
+                        font-size: 1em; 
                     }
             }
         </style>
@@ -715,11 +718,11 @@
       </label>
     <label class="custom-radio">
       <input type="radio" name="custom-radio" checked="">
-      <a href="{% url 'experience1' %}" style="text-decoration:none"><span class="custom-name">Acm Event Manager</span></a>
+      <span class="custom-name"><a href="{% url 'experience1' %}" style="text-decoration:none;color:white">Acm Event Manager</a></span>
     </label>
     <label class="custom-radio">
       <input type="radio" name="custom-radio">
-      <a href="{% url 'experience3' %}" style="text-decoration:none"><span class="custom-name">Other Expertise</span>
+      <a href="{% url 'experience3' %}" style="text-decoration:none"><span class="custom-name">Other Expertise</span></a>
     </label>
   </div>
 </div>
@@ -727,22 +730,19 @@
   
 <div class="acm-section animated">
     <div class="acm-image-container">
-      <img src="my_pic.png" alt="ACM Image" class="acm-image">
+      <img src="https://i.ibb.co/nPbPdT0/image-removebg-preview-38.png" alt="ACM Image" class="acm-image">
     </div>
     <div class="acm-content animated">
       <h2 class="acm-title">ACM Student Chapter</h2>
-      <p class="acm-text">Join our ACM Student Chapter to connect with peers, learn new skills, and participate in exciting events.</p>
-      <a href="https://your-acm-student-chapter-website.com" class="acm-button">Visit Our ACM Student Chapter</a>
+      <p class="acm-text">As an ACM event manager, I organized numerous coding competitions, including Code Geeks 3.0 to Code Furia 7.0. I handled event logistics, conducted events, recruited participants, promoted events, and oversaw all responsibilities related to my role. My journey began as an ACM member, and I had an amazing first event, Hour of Code, where I mentored students and served as the event coordinator.</p><a href="https://jntukucev.hosting2.acm.org/team/" class="acm-button">Visit Our ACM Student Chapter</a>
     </div>
   </div>
   
   <section id="centered-section animated">
     <div class="container animated">
-        <h2 class="section-title">Centered Section Title</h2>
+        <h2 class="section-title" style="text-align:center;color:#39f2ffd4">HOUR OF CODE</h2>
         <div class="section-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac nisi eu metus facilisis vehicula sed nec urna. Donec eget nisi nisi. Sed condimentum, purus a tristique fermentum, odio sem mollis sem, eu volutpat urna eros id nulla.</p>
-            <p>Nulla viverra, felis non tincidunt laoreet, justo sem dapibus felis, auctor malesuada mi velit nec leo. Integer et vehicula ligula. Nunc vel velit eu felis bibendum aliquet vel eget ex. Nam nec lectus a dolor consectetur ultricies.</p>
-            <p>Etiam fringilla lectus non tellus interdum, nec efficitur ligula vestibulum. Nullam commodo mi nec nisl fringilla efficitur. Donec malesuada ligula quis mi fermentum, at rhoncus augue gravida.</p>
+            <p>This was my first event, a 3-day technical workshop. On December 8th, 2022, I took on the mentorship role for the third and final day, where my friends and I conducted a workshop on creating games using Python for our juniors.</p>
         </div>
     </div>
 </section>
@@ -752,36 +752,13 @@
         <div class="swiper unique-pictures-slider animated">
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide unique-pictures-slide">
-                    <div class="unique-pictures-slide-img">
-                        <img src="my_pic.png" alt="Picture 1">
-                    </div>
-                </div>
-                <div class="swiper-slide unique-pictures-slide">
-                    <div class="unique-pictures-slide-img">
-                        <img src="logo2.png" alt="Picture 2">
-                    </div>
-                </div>
-                <div class="swiper-slide unique-pictures-slide">
-                    <div class="unique-pictures-slide-img">
-                        <img src="https://via.placeholder.com/400" alt="Picture 3">
-                    </div>
-                </div>
-                <div class="swiper-slide unique-pictures-slide">
-                    <div class="unique-pictures-slide-img">
-                        <img src="https://via.placeholder.com/500" alt="Picture 4">
-                    </div>
-                </div>
-                <div class="swiper-slide unique-pictures-slide">
-                    <div class="unique-pictures-slide-img">
-                        <img src="https://via.placeholder.com/600" alt="Picture 5">
-                    </div>
-                </div>
-                <div class="swiper-slide unique-pictures-slide">
-                    <div class="unique-pictures-slide-img">
-                        <img src="https://via.placeholder.com/700" alt="Picture 6">
-                    </div>
-                </div>
+                    {% for image in images %}
+                        <div class="swiper-slide unique-pictures-slide">
+                            <div class="unique-pictures-slide-img">
+                                <img src="{{ image }}" alt="Picture">
+                            </div>
+                        </div>
+                    {% endfor %}
                 <!-- Add more slides as needed -->
             </div>
             <!-- Pagination and Navigation -->
@@ -793,92 +770,25 @@
 </section>
 
 <div class="toggle-container animated">
-    <section class="toggle-section animated">
-        <div class="toggle-header">
-            <div class="main-title">Section Title 1</div>
-            <div class="toggle-icon"><i class="bi bi-chevron-down"></i></div>
-        </div>
-        <div class="toggle-content">
-            <div class="content-wrapper">
-                <div class="content-image">
-                    <img src="https://via.placeholder.com/150x100" alt="Description" class="img-fluid rounded-image">
-                </div>
-                <div class="content-text">
-                    <h2 class="content-title">Image Title 1</h2>
-                    <p class="content-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor elit non massa congue, ac suscipit eros malesuada.</p>
-                </div>
+    {% for item in items %}
+<section class="toggle-section animated">
+    <div class="toggle-header">
+        <div class="main-title">{{ item.main_title }}</div>
+        <div class="toggle-icon"><i class="bi bi-chevron-down"></i></div>
+    </div>
+    <div class="toggle-content">
+        <div class="content-wrapper">
+            <div class="content-image">
+                <img src="{{ item.image }}" alt="{{ item.sub_title }}" class="img-fluid rounded-image">
+            </div>
+            <div class="content-text">
+                <h2 class="content-title">{{ item.sub_title }}</h2>
+                <p class="content-description">{{ item.description }}</p>
             </div>
         </div>
-    </section>
-    <section class="toggle-section animated">
-        <div class="toggle-header">
-            <div class="main-title">Section Title 1</div>
-            <div class="toggle-icon"><i class="bi bi-chevron-down"></i></div>
-        </div>
-        <div class="toggle-content">
-            <div class="content-wrapper">
-                <div class="content-image">
-                    <img src="https://via.placeholder.com/150x100" alt="Description" class="img-fluid rounded-image">
-                </div>
-                <div class="content-text">
-                    <h2 class="content-title">Image Title 1</h2>
-                    <p class="content-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor elit non massa congue, ac suscipit eros malesuada.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="toggle-section animated">
-        <div class="toggle-header">
-            <div class="main-title">Section Title 1</div>
-            <div class="toggle-icon"><i class="bi bi-chevron-down"></i></div>
-        </div>
-        <div class="toggle-content">
-            <div class="content-wrapper">
-                <div class="content-image">
-                    <img src="https://via.placeholder.com/150x100" alt="Description" class="img-fluid rounded-image">
-                </div>
-                <div class="content-text">
-                    <h2 class="content-title">Image Title 1</h2>
-                    <p class="content-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor elit non massa congue, ac suscipit eros malesuada.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="toggle-section animated">
-        <div class="toggle-header">
-            <div class="main-title">Section Title 2</div>
-            <div class="toggle-icon"><i class="bi bi-chevron-down"></i></div>
-        </div>
-        <div class="toggle-content">
-            <div class="content-wrapper">
-                <div class="content-image">
-                    <img src="https://via.placeholder.com/150x100" alt="Description" class="img-fluid rounded-image">
-                </div>
-                <div class="content-text">
-                    <h2 class="content-title">Image Title 2</h2>
-                    <p class="content-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor elit non massa congue, ac suscipit eros malesuada.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="toggle-section animated">
-        <div class="toggle-header">
-            <div class="main-title">Section Title 3</div>
-            <div class="toggle-icon"><i class="bi bi-chevron-down"></i></div>
-        </div>
-        <div class="toggle-content">
-            <div class="content-wrapper">
-                <div class="content-image">
-                    <img src="https://via.placeholder.com/150x100" alt="Description" class="img-fluid rounded-image">
-                </div>
-                <div class="content-text">
-                    <h2 class="content-title">Image Title 3</h2>
-                    <p class="content-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor elit non massa congue, ac suscipit eros malesuada.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
+{% endfor %}
 </div>
 
     <section class="contact-section animated">
