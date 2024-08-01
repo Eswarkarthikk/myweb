@@ -42,25 +42,39 @@ def projects1(request):
         {
             "main_title": "SENTIMAP",
             "description": "Sentimap is a web scraping project developed during the Smart India Hackathon. It takes a YouTube video link as input, scrapes all the comments, and analyzes them using NLP to provide various insights about the video. Additionally, it utilizes public data to make predictions for elections and detects vulgar messages in the comments.",
-            "image": "https://example.com/main-image2.jpg",
-            "git_link": "https://github.com/username/project2",
-            "weblink": "https://example.com/project2",
+            "image": "https://i.ibb.co/dbLRWwJ/image.png",
+            "git_link": "https://github.com/Eswarkarthikk/Sentimap/tree/main/SENTIMAP",
+            "weblink": "https://github.com/Eswarkarthikk/Sentimap",
             "snapshots": [
-                "https://example.com/snapshot4.jpg",
-                "https://example.com/snapshot5.jpg",
-                "https://example.com/snapshot6.jpg",
+                "https://i.ibb.co/cvfqT0L/55f9bcdb-8fc1-499d-bfe8-3d44faa22e12-4.jpg",
+                "https://i.ibb.co/fC27KKs/55f9bcdb-8fc1-499d-bfe8-3d44faa22e12-3.jpg",
+                "https://i.ibb.co/YczK9QY/55f9bcdb-8fc1-499d-bfe8-3d44faa22e12-2.jpg",
+                "https://i.ibb.co/0G04tpn/55f9bcdb-8fc1-499d-bfe8-3d44faa22e12-1.jpg",
+                "https://i.ibb.co/82CXVpj/55f9bcdb-8fc1-499d-bfe8-3d44faa22e12-0.jpg",
+                "https://i.ibb.co/zXP4xJ1/Picture8.png",
+                "https://i.ibb.co/QjCcwMq/Picture7.png",
+                "https://i.ibb.co/gM101dt/Picture6.png",
+                "https://i.ibb.co/t3DnyCZ/Picture5.png",
+                "https://i.ibb.co/GC5ctpL/Picture4.png",
+                "https://i.ibb.co/8XBXKYR/Picture3.png",
+                "https://i.ibb.co/cyBWBCY/Picture2.png",
+                "https://i.ibb.co/zXP4xJ1/Picture8.png",
+                "https://i.ibb.co/Wns9VTc/55f9bcdb-8fc1-499d-bfe8-3d44faa22e12-6.jpg",
+                "https://i.ibb.co/3mBdRWv/55f9bcdb-8fc1-499d-bfe8-3d44faa22e12-5.jpg",
             ]
         },
         {
-            "main_title": "Project Title 3",
-            "description": "Description for project 3.",
-            "image": "https://example.com/main-image3.jpg",
-            "git_link": "https://github.com/username/project3",
-            "weblink": "https://example.com/project3",
+            "main_title": "Random Gallery",
+            "description": " It is a React-based website that I built to understand how React works. I have successfully deployed it on GitHub. To create this project, I used an API to fetch images and incorporated a search bar functionality, allowing users to retrieve pictures based on their input. This project helped me gain practical experience in working with React and integrating external APIs to enhance the user experience.",
+            "image": "https://i.ibb.co/dGCQt4B/image.png",
+            "git_link": "https://github.com/Eswarkarthikk/RandomGallery",
+            "weblink": "https://eswarkarthikk.github.io/RandomGallery/",
             "snapshots": [
-                "https://example.com/snapshot7.jpg",
-                "https://example.com/snapshot8.jpg",
-                "https://example.com/snapshot9.jpg",
+                "https://i.ibb.co/D56jnqN/Screenshot-2024-08-01-230433.png",
+                "https://i.ibb.co/ScmVrnL/Screenshot-2024-08-01-230451.png",
+                "https://i.ibb.co/MVM1rhL/Screenshot-2024-08-01-230538.png",
+                "https://i.ibb.co/SdqhMYD/Screenshot-2024-08-01-230555.png",
+                
             ]
         },
         # Add more projects as needed
@@ -91,27 +105,58 @@ def projects2(request):
             ]
         },
         {
-            "main_title": "Project Title 2",
-            "description": "Description for project 2.",
-            "image": "https://example.com/main-image2.jpg",
+            "main_title": "E - Library ",
+            "description": "Library Management is a project me and my team harsha,amar,bhavani and sushma developed using pure HTML during my second year of studying web development. This project helped me grasp fundamental HTML concepts and understand how to structure a web application effectively. It served as a solid foundation for my future endeavors in web development, introducing me to essential coding practices and the importance of clean, semantic markup.",
+            "image":"https://i.ibb.co/s9zPgS6/Screenshot-2024-07-21-200544.png",
             "git_link": "https://github.com/username/project2",
             "weblink": "https://example.com/project2",
-            "snapshots": [
-                "https://example.com/snapshot4.jpg",
-                "https://example.com/snapshot5.jpg",
-                "https://example.com/snapshot6.jpg",
+             "snapshots": [
+                "https://i.ibb.co/K0Wh4Pp/Screenshot-2024-07-21-200700.png",
+                "https://i.ibb.co/3FM3268/Screenshot-2024-07-21-200638.png",
+                "https://i.ibb.co/GPTrYBX/Screenshot-2024-07-21-200627.png",
+                "https://i.ibb.co/VwkLFY5/Screenshot-2024-07-21-200610.png",
+                "https://i.ibb.co/fFwtNjL/Screenshot-2024-07-21-200556.png",
+                "https://i.ibb.co/ZXbLDC4/Screenshot-2024-07-21-200923.png",
+                "https://i.ibb.co/D4BTBQZ/Screenshot-2024-07-21-200908.png",
+                "https://i.ibb.co/jRXshq9/Screenshot-2024-07-21-200846.png",
+                "https://i.ibb.co/HPHX6rW/Screenshot-2024-07-21-200837.png",
+                "https://i.ibb.co/gPtmGbC/Screenshot-2024-07-21-200810.png",
+                "https://i.ibb.co/6RsyQg3/Screenshot-2024-07-21-200741.png",
+                "https://i.ibb.co/gb1ScRg/Screenshot-2024-07-21-200712.png",
             ]
         },
         {
-            "main_title": "Project Title 3",
-            "description": "Description for project 3.",
-            "image": "https://example.com/main-image3.jpg",
+            "main_title": "Student Enrollment",
+            "description": "The Student Enrollment project is developed using Java Servlets and deployed on a Tomcat server. For the backend, I utilized the MySQL JDBC driver to facilitate database connectivity. The application handles HTTP Servlet requests and responses to interact with JSP and HTML pages. I implemented all CRUD (Create, Read, Update, Delete) operations to manage student data effectively, allowing for seamless storage and retrieval of information from the database.",
+            "image": "https://i.ibb.co/ZWZryFp/image.png",
+            "git_link": "https://github.com/username/project3",
+            "weblink": "https://example.com/project3",
+             "snapshots": [
+                "https://i.ibb.co/C1hfrNs/Screenshot-2024-07-21-200150.png",
+                "https://i.ibb.co/55Bgg4f/Screenshot-2024-07-21-195750.png",
+                "https://i.ibb.co/F00PXZg/Screenshot-2024-07-21-195703.png",
+                "https://i.ibb.co/fDRZSTm/Screenshot-2024-07-21-195651.png",
+                "https://i.ibb.co/LQYqvYk/Screenshot-2024-07-21-195625.png",
+                "https://i.ibb.co/RTFwgsH/Screenshot-2024-07-21-195559.png",
+                "https://i.ibb.co/1Z1YFsH/Screenshot-2024-07-21-195547.png",
+                "https://i.ibb.co/pZyNnXP/Screenshot-2024-07-21-195450.png",
+                "https://i.ibb.co/DMFMV87/Screenshot-2024-07-21-195438.png",
+                "https://i.ibb.co/kGMzqSd/Screenshot-2024-07-21-200215.png",
+            ]
+        },
+        {
+            "main_title": "Service Management",
+            "description": "The Service Management project follows a similar structure to the Student Enrollment project, also built using Java Servlets and the Tomcat server. However, I introduced additional enhancements by incorporating JavaBeans, which improved the flexibility and maintainability of the application. This project also performs CRUD operations and effectively manages service-related data, providing a robust solution for service management.",
+            "image": "https://i.ibb.co/rsw584q/image.png",
             "git_link": "https://github.com/username/project3",
             "weblink": "https://example.com/project3",
             "snapshots": [
-                "https://example.com/snapshot7.jpg",
-                "https://example.com/snapshot8.jpg",
-                "https://example.com/snapshot9.jpg",
+                "https://i.ibb.co/By7Sb7k/Screenshot-2024-04-20-143050.png",
+                "https://i.ibb.co/Khxc4cG/Screenshot-2024-04-20-143041.png",
+                "https://i.ibb.co/vvzsy2B/Screenshot-2024-04-20-143029.png",
+                "https://i.ibb.co/Vg00zVT/Screenshot-2024-04-20-143017.png",
+                "https://i.ibb.co/XjM4ZFH/Screenshot-2024-07-21-200244.png",
+                "https://i.ibb.co/GJjm7Rs/Screenshot-2024-04-20-143058.png"
             ]
         },
         # Add more projects as needed
@@ -186,7 +231,19 @@ def experience2(request):
 def experience3(request):
     return render(request, 'experience2.html')
 def aboutme(request):
-    return render(request,'me.html')
+    images = [
+        "https://i.ibb.co/d2JGFPb/A-drawing-page-0001.jpg",
+        "https://i.ibb.co/JQVwJtC/My-drawings-page-0001.jpg",
+        "https://i.ibb.co/DgLntDG/My-drawings-page-0006.jpg",
+        "https://i.ibb.co/qFwrJ9Z/My-drawings-page-0007.jpg",
+        "https://i.ibb.co/gMG09yR/My-drawings-page-0008.jpg",
+        "https://i.ibb.co/njz0113/My-drawings-page-0002.jpg",
+        "https://i.ibb.co/hdnkJSX/My-drawings-page-0003.jpg",
+        "https://i.ibb.co/bBgYKdn/My-drawings-page-0004.jpg",
+        "https://i.ibb.co/qrDYDZS/My-drawings-page-0014.jpg",
+        "https://i.ibb.co/b2ccpSg/A-drawing-page-0002.jpg"
+    ]
+    return render(request,'me.html',{'images': images})
 def certifications(request):
     return render(request,'certifications.html')
 # views.py
