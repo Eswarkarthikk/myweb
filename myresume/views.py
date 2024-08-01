@@ -262,13 +262,13 @@ def projects3(request):
             'hugging_face_link': 'https://eswarkarthikk-object-detection.hf.space'
         },
         {
-            'sectiontitle': '',
-            'title': 'Project Two',
-            'description': 'This is a description for Project Two.',
-            'image_link': 'https://example.com/image2.jpg',
+            'sectiontitle': 'Heart Disease',
+            'title': 'Medical Diagnosis Heart Disease',
+            'description': 'This project is a heart disease prediction application developed using a machine learning model and deployed on Hugging Face Spaces with a Gradio interface. Users can input various health parameters, such as age, cholesterol levels, and heart rate, to receive real-time predictions about the likelihood of heart disease. The model is trained using Scikit-learn and can be accessed via a shareable API for integration into other applications. This tool aims to assist individuals in assessing their heart health based on key indicators.',
+            'image_link': 'https://i.ibb.co/2n5kdJx/image.png',
             'github_link': 'https://github.com/user/project2',
             'weblink': 'https://example.com/test2',
-            'hugging_face_link': 'https://huggingface.co/user/project2'
+            'hugging_face_link': 'https://edwardhuero-heart-disease.hf.space/'
         },
         {
             'sectiontitle': '',
