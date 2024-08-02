@@ -245,7 +245,21 @@ def aboutme(request):
     ]
     return render(request,'me.html',{'images': images})
 def certifications(request):
-    return render(request,'certifications.html')
+    images = [
+        "https://i.ibb.co/q1b63K2/automation-udemy.jpg",
+        "https://i.ibb.co/nkt3RpL/webscraping-udemy.jpg",
+        "https://i.ibb.co/ZfNT6F4/Programming-in-Modern-C.jpg",
+        "https://i.ibb.co/TRP7c3j/sih.jpg",
+        "https://i.ibb.co/8cvFx8F/ncc.jpg",
+        "https://i.ibb.co/0fd1GYC/21-VV1-A1201-1.jpg",
+        "https://i.ibb.co/C0j7Jkc/Screenshot-2024-08-02-204430.png",
+        "https://i.ibb.co/R4XQSDb/Screenshot-2024-08-02-204251.png",
+        "https://i.ibb.co/56jbqtc/Screenshot-2024-08-02-204043.png",
+        "https://i.ibb.co/74F9vmP/edx-course-on-english.jpg"
+    ]
+    
+    # Correctly pass the images as a dictionary
+    return render(request, 'certifications.html', {"images": images})
 # views.py
 from django.shortcuts import render
 
