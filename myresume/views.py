@@ -245,21 +245,64 @@ def aboutme(request):
     ]
     return render(request,'me.html',{'images': images})
 def certifications(request):
-    images = [
-        "https://i.ibb.co/q1b63K2/automation-udemy.jpg",
-        "https://i.ibb.co/nkt3RpL/webscraping-udemy.jpg",
-        "https://i.ibb.co/ZfNT6F4/Programming-in-Modern-C.jpg",
-        "https://i.ibb.co/TRP7c3j/sih.jpg",
-        "https://i.ibb.co/8cvFx8F/ncc.jpg",
-        "https://i.ibb.co/0fd1GYC/21-VV1-A1201-1.jpg",
-        "https://i.ibb.co/C0j7Jkc/Screenshot-2024-08-02-204430.png",
-        "https://i.ibb.co/R4XQSDb/Screenshot-2024-08-02-204251.png",
-        "https://i.ibb.co/56jbqtc/Screenshot-2024-08-02-204043.png",
-        "https://i.ibb.co/74F9vmP/edx-course-on-english.jpg"
+    certificates1 = [
+      {
+            'link': 'https://i.ibb.co/ZfNT6F4/Programming-in-Modern-C.jpg',
+            'title': 'Programming in Modern C++',
+            'description': 'Completed a 12-month course on Programming in Modern C++ with a score of 55% in the final exam.',
+        },
+        {
+            'link': 'https://i.ibb.co/TRP7c3j/sih.jpg',
+            'title': 'Smart India Hackathon',
+            'description': 'My team was selected for the Smart India Hackathon Grand Finale 2024, a truly memorable experience for me.',
+        },
+        {
+            'link': 'https://i.ibb.co/0fd1GYC/21-VV1-A1201-1.jpg',
+            'title': 'Oracle Java Foundations',
+            'description': 'Studied Java Foundations and successfully passed the exams provided by Oracle.',
+        },
+        {
+            'link': 'https://i.ibb.co/C0j7Jkc/Screenshot-2024-08-02-204430.png',
+            'title': 'Social Network Analysis',
+            'description': 'Completed a 12-month course on Social Network Analysis with a 51% score in the examination.',
+        },
+        {
+            'link': 'https://i.ibb.co/R4XQSDb/Screenshot-2024-08-02-204251.png',
+            'title': 'Microsoft Azure Fundamentals',
+            'description': 'Participated in and passed the Microsoft Azure AI Fundamentals exam, earning this badge.',
+        },
+        {
+            'link': 'https://i.ibb.co/56jbqtc/Screenshot-2024-08-02-204043.png',
+            'title': 'Android App Development',
+            'description': 'Completed a 2-month online internship in Android App Development and received this certificate from Codsoft as recognition.verify',
+        },
+        {
+            'link': 'https://i.ibb.co/74F9vmP/edx-course-on-english.jpg',
+            'title': 'Conversational Skills',
+            'description': 'Earned a certification in English Conversational Skills from edX.',
+        },
+        
+          {
+            'link': 'https://i.ibb.co/q1b63K2/automation-udemy.jpg',
+            'title': 'Automation with Python',
+            'description': 'Completed a comprehensive course on Automation with Python.',
+        },
+        {
+            'link': 'https://i.ibb.co/nkt3RpL/webscraping-udemy.jpg',
+            'title': 'Web Scraping Certification',
+            'description': 'Earned a certification in Web Scraping techniques.',
+        },
+        
     ]
-    
+    certificates2=[
+        {
+            'link': 'https://i.ibb.co/8cvFx8F/ncc.jpg',
+            'title': 'National Cadet Corps',
+            'description': 'Served as CPL in the 14 Andhra Battalion NCC (Army) for 2 years, gaining experience in operating .22mm rifles, attending 5 different camps, and leading as a platoon leader.',
+        },
+    ]
     # Correctly pass the images as a dictionary
-    return render(request, 'certifications.html', {"images": images})
+    return render(request, 'certifications.html', {"certificates1": certificates1,"certificates2": certificates2})
 # views.py
 from django.shortcuts import render
 
