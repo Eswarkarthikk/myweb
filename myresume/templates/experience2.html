@@ -393,7 +393,116 @@
             }
               
         </style>
-
+        <style>
+            .section {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 30px;
+                margin-left: 30px;
+                background-color: #2dd4fa0e;
+                justify-content: center;
+                align-items: center;
+                border-radius: 20px;
+            }
+            .section:hover{
+                background-color: #0000001d;
+            }
+    .snapshots{
+        text-align: center;
+        font-weight: bolder;
+        padding: 20px;
+    }
+            .section-image {
+                flex: 0 0 40%; /* Increased image occupancy to 40% */
+                max-width: 100%;
+                padding: 15px;
+                order: 2; /* Adjusting order to place image on the right */
+            }
+            
+            .section-content {
+                flex: 0 0 60%; /* Adjusted content width to 60% */
+                max-width: 60%;
+                padding: 15px;
+                font-size: 1.3rem;
+                order: 1; /* Adjusting order to place content on the left */
+            }
+            .rounded-image {
+                width: 500px;
+                height: auto; /* Ensuring image height adjusts proportionally */
+                border-radius: 15px;
+                object-fit: cover;
+            }
+            .buttons {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+            }
+            .buttons .btn {
+                flex: 0 0 48%;
+            }
+        </style>
+        <style>
+            .btn-github {
+                background-color: white;
+                color: black;
+                border:1px solid black;
+                font-weight: bold;
+                border: none;
+            }
+            
+            .btn-github:hover {
+                background-color: rgb(8, 199, 8);
+                color: white;
+            }
+            
+            .btn-share {
+                background-color: rgb(0, 0, 0);
+                color: white;
+                font-weight: bolder;
+                border: none;
+            }
+            
+            .btn-share:hover {
+                background-color: rgb(111, 228, 249);
+                color: rgb(9, 4, 81);
+            }
+        </style>
+        <style>
+            @media (max-width: 768px) {
+                .section {
+                    flex-direction: column-reverse; /* Stack image below content */
+                    margin-left: 0; /* Remove left margin */
+                    background-color: #2dd4fa0e;
+                }
+                .section:hover{
+                    background-color: #07080b7a;
+                }
+                .section-content, .section-image {
+                    flex: 1 1 100%; /* Full width for both content and image */
+                    max-width: 100%;
+                    order: initial; /* Reset order for stacking */
+                    padding: 15px;
+                }
+                .buttons {
+                    flex-direction: row; /* Stack buttons vertically */
+                    margin-top: 20px;
+                }
+                .buttons .btn {
+                    margin-bottom: 10px; /* Add space between buttons */
+                }
+                .section-title {
+                    font-size: 28px; /* Decrease font size for title */
+                    font-weight: 600; /* Keep semibold weight */
+                    text-align: center; /* Center align title */
+                }
+                .section-text {
+                    text-align: justify; /* Justify text */
+                    font-size: 20px;
+                    font-weight: normal;
+                    
+                }
+            }
+        </style>
 </head>
 <body>
     <section class="navbar">
@@ -430,7 +539,29 @@
 </div>
 
 
- 
+{% for project in projects %}
+<section class="project animated">
+    <div class="container mt-5 animated">
+        <div class="section">
+            <div class="section-content animated">
+                <h2 class="section-title animated" style="font-size: 36px; font-weight: 600;">{{ project.main_title }}</h2>
+                <p class="section-text animated">{{ project.description }}</p>
+                <div class="buttons animated">
+                    <a href="{{ project.git_link }}" class="btn btn-primary btn-lg btn-github">
+                        <i class="bi bi-github"></i> Code 
+                    </a>
+                    <a href="{{ project.weblink }}" class="btn btn-secondary btn-lg btn-share">
+                        Try it <i class="bi bi-send-fill"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="section-image animated">
+                <img src="{{ project.image }}" alt="{{ project.main_title }}" class="img-fluid rounded-image">
+            </div>
+        </div>
+    </div>  
+</section>
+{% endfor %}
 
     <section class="contact-section animated">
         <div class="contact-left">

@@ -227,9 +227,43 @@ def experience1(request):
     return render(request , 'Experience.html' , { 'images' : images,'items':items})
     
 def experience2(request):
-    return render(request, 'intern.html')
+    projects = [
+        {
+            "main_title": "Results Scraping",
+            "description": "Result Pages is another web scraping project I created to scrape results from the JNTUGV website, which is built on React. I utilized Selenium and automation to extract data for all users and save it in a CSV file. Although it is not deployed due to the limitations of scraping codes in online applications, I am looking forward to releasing an app for this project.",
+            "image": "https://i.ibb.co/DYLJ17j/image.png",
+            "git_link": "https://github.com/Eswarkarthikk/results/tree/main/Results",
+            "weblink": "https://github.com/Eswarkarthikk/results",
+        },
+        {
+            "main_title": "E - Library ",
+            "description": "Library Management is a project me and my team harsha,amar,bhavani and sushma developed using pure HTML during my second year of studying web development. This project helped me grasp fundamental HTML concepts and understand how to structure a web application effectively. It served as a solid foundation for my future endeavors in web development, introducing me to essential coding practices and the importance of clean, semantic markup.",
+            "image":"https://i.ibb.co/s9zPgS6/Screenshot-2024-07-21-200544.png",
+            "git_link": "https://github.com/username/project2",
+            "weblink": "https://example.com/project2",
+        },
+      
+    ]
+    return render(request, 'intern.html',{'projects': projects})
 def experience3(request):
-    return render(request, 'experience2.html')
+    projects = [
+        {
+            "main_title": "Results Scraping",
+            "description": "Result Pages is another web scraping project I created to scrape results from the JNTUGV website, which is built on React. I utilized Selenium and automation to extract data for all users and save it in a CSV file. Although it is not deployed due to the limitations of scraping codes in online applications, I am looking forward to releasing an app for this project.",
+            "image": "https://i.ibb.co/DYLJ17j/image.png",
+            "git_link": "https://github.com/Eswarkarthikk/results/tree/main/Results",
+            "weblink": "https://github.com/Eswarkarthikk/results",
+        },
+        {
+            "main_title": "E - Library ",
+            "description": "Library Management is a project me and my team harsha,amar,bhavani and sushma developed using pure HTML during my second year of studying web development. This project helped me grasp fundamental HTML concepts and understand how to structure a web application effectively. It served as a solid foundation for my future endeavors in web development, introducing me to essential coding practices and the importance of clean, semantic markup.",
+            "image":"https://i.ibb.co/s9zPgS6/Screenshot-2024-07-21-200544.png",
+            "git_link": "https://github.com/username/project2",
+            "weblink": "https://example.com/project2",
+        },
+      
+    ]
+    return render(request, 'experience2.html',{'projects': projects})
 def aboutme(request):
     images = [
         "https://i.ibb.co/d2JGFPb/A-drawing-page-0001.jpg",
