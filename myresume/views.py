@@ -362,24 +362,34 @@ def projects3(request):
             'hugging_face_link': 'https://edwardhuero-heart-disease.hf.space/'
         },
         {
-            'sectiontitle': '',
-            'title': 'Project Three',
-            'description': 'This is a description for Project Three.',
+            'sectiontitle': 'Digit Recognition',
+            'title': 'Handwritten digit recognition',
+            'description': 'This is a small project that i have done as a part of teckybot internship . you should check this project . I developed this model to detect the single digit at once . ',
             'image_link': 'https://example.com/image3.jpg',
             'github_link': 'https://github.com/user/project3',
             'weblink': 'https://example.com/test3',
-            'hugging_face_link': 'https://huggingface.co/user/project3'
+            'hugging_face_link': 'https://eswarkarthikk-digit-recognition.hf.space/'
         },
         {
-            'sectiontitle': '',
-            'title': 'Project Four',
-            'description': 'This is a description for Project Four.',
+            'sectiontitle': 'Route Finder',
+            'title': 'Andra Pradesh route finding ',
+            'description': ' This is not a machine learning project but i have developed this from scratch . i got the dataset built by me and you should check this . It results the routs according to the location of the cities rather than the actual route between them . ',
             'image_link': 'https://example.com/image4.jpg',
             'github_link': 'https://github.com/user/project4',
             'weblink': 'https://example.com/test4',
-            'hugging_face_link': 'https://huggingface.co/user/project4'
+            'hugging_face_link': 'https://edwardhuero-route-finding.hf.space/'
+        },
+        {
+            'sectiontitle': 'Fraud Detection',
+            'title': 'Credit Card Fraud Detection',
+            'description': 'This model is trained on the previous credit card users which used them to do the fraudulant transactions . so by using the past dataset i made this model to detect the fraudsters before even authorizing a credit card to them . ',
+            'image_link': 'https://example.com/image4.jpg',
+            'github_link': 'https://github.com/user/project4',
+            'weblink': 'https://example.com/test4',
+            'hugging_face_link': 'https://eswarkarthikk-credit-card-fraud-detection.hf.space/'
         }
     ]
+
     
     # Render the template with the projects data
     return render(request, 'mlprojects.html', {'projects': projects})
