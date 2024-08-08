@@ -229,8 +229,8 @@ def experience1(request):
 def experience2(request):
     projects = [
         {
-            "main_title": "Results Scraping",
-            "description": "Result Pages is another web scraping project I created to scrape results from the JNTUGV website, which is built on React. I utilized Selenium and automation to extract data for all users and save it in a CSV file. Although it is not deployed due to the limitations of scraping codes in online applications, I am looking forward to releasing an app for this project.",
+            "main_title": "Teckybot Internship",
+            "description": "I was selected for this online internship after an interview, along with my friends Jai Sai Srikar (IT) and Neelima (CSE) from our college, as AI/ML developers. We have been working on this project for over two and a half months, and it is still ongoing. This internship has been a memorable experience, thanks to the exceptional mentorship from Bandaru Bhargavi Ma'am and Venkat Sir. I have learned a lot about machine learning and developed models using various methods throughout this journey.",
             "image": "https://i.ibb.co/DYLJ17j/image.png",
             "git_link": "https://github.com/Eswarkarthikk/results/tree/main/Results",
             "weblink": "https://github.com/Eswarkarthikk/results",

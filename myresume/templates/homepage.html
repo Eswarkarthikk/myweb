@@ -37,9 +37,14 @@
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
-        padding-bottom: 100px;
         background-color: transparent;
         z-index: 1000;
+        background-color: #0801178d;
+        border-radius: 50px;
+    }
+    .mine{
+        padding: 25px;
+        border-radius: 50px;
     }
     
     .logo {
@@ -736,7 +741,7 @@ h2 {
 <body>
 <section class="navbar">
     <img src="https://i.ibb.co/2MCsz0H/logo2.png" alt="Logo" class="logo">
-    <nav>
+    <nav class="mine">
         <ul class="hide">
             <li><a href="{% url 'mainpage' %}" style="color:rgb(0, 58, 82);font-weight:bold">Home</a></li>
             <li><a href="{% url 'aboutme' %}">About Me</a></li>
