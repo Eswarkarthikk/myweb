@@ -231,39 +231,85 @@ def experience2(request):
         {
             "main_title": "Teckybot Internship",
             "description": "I was selected for this online internship after an interview, along with my friends Jai Sai Srikar (IT) and Neelima (CSE) from our college, as AI/ML developers. We have been working on this project for over two and a half months, and it is still ongoing. This internship has been a memorable experience, thanks to the exceptional mentorship from Bandaru Bhargavi Ma'am and Venkat Sir. I have learned a lot about machine learning and developed models using various methods throughout this journey.",
-            "image": "https://i.ibb.co/DYLJ17j/image.png",
-            "git_link": "https://github.com/Eswarkarthikk/results/tree/main/Results",
-            "weblink": "https://github.com/Eswarkarthikk/results",
+            "image": "https://i.ibb.co/6WnzT92/Screenshot-2024-07-31-153256.png",
         },
         {
-            "main_title": "E - Library ",
-            "description": "Library Management is a project me and my team harsha,amar,bhavani and sushma developed using pure HTML during my second year of studying web development. This project helped me grasp fundamental HTML concepts and understand how to structure a web application effectively. It served as a solid foundation for my future endeavors in web development, introducing me to essential coding practices and the importance of clean, semantic markup.",
-            "image":"https://i.ibb.co/s9zPgS6/Screenshot-2024-07-21-200544.png",
-            "git_link": "https://github.com/username/project2",
-            "weblink": "https://example.com/project2",
+            "main_title": "Codsoft Internship",
+            "description": "This was an online Android app development internship. I was supposed to complete 5 tasks given to me, but I only finished two. You can download my Android applications and feel free to check my code on GitHub.",
+            "image":"https://i.ibb.co/rykrvxW/codsoft.png",
         },
-      
+            {
+            "main_title": "Brain o vision",
+            "description": "This is an online data science internship I obtained from APSCHE. Although I found it less interesting, I am pursuing it to earn credits for my 4th-year completion.",
+            "image":"https://i.ibb.co/CHdM2mz/image.png",
+        },
+       
     ]
     return render(request, 'intern.html',{'projects': projects})
 def experience3(request):
     projects = [
         {
-            "main_title": "Results Scraping",
-            "description": "Result Pages is another web scraping project I created to scrape results from the JNTUGV website, which is built on React. I utilized Selenium and automation to extract data for all users and save it in a CSV file. Although it is not deployed due to the limitations of scraping codes in online applications, I am looking forward to releasing an app for this project.",
-            "image": "https://i.ibb.co/DYLJ17j/image.png",
-            "git_link": "https://github.com/Eswarkarthikk/results/tree/main/Results",
-            "weblink": "https://github.com/Eswarkarthikk/results",
+            "main_title": "Smart India Hackathon",
+            "description": "My team, consisting of Srikar, Meeravali, Sandeep Banodhar, Archana, and myself, was selected for the Smart India Hackathon 2023. We traveled to Sambalpur, Odisha, for this exciting journey. Although I was just a team member, I played a significant role during the two-day hackathon by preparing presentations, designing the backend for our project, and integrating everything. While we did not win, we put forth our best effort in developing a project, which you can find in my projects.",
+            "image":"https://i.ibb.co/Gx0B5bT/1715325222708.jpg",
         },
+
         {
-            "main_title": "E - Library ",
-            "description": "Library Management is a project me and my team harsha,amar,bhavani and sushma developed using pure HTML during my second year of studying web development. This project helped me grasp fundamental HTML concepts and understand how to structure a web application effectively. It served as a solid foundation for my future endeavors in web development, introducing me to essential coding practices and the importance of clean, semantic markup.",
-            "image":"https://i.ibb.co/s9zPgS6/Screenshot-2024-07-21-200544.png",
-            "git_link": "https://github.com/username/project2",
-            "weblink": "https://example.com/project2",
+            "main_title": "Ityukta2k24",
+            "description": "Ityukta2k24 is a two-day technical symposium for which our team worked diligently for over two months. I gained valuable experience in securing sponsorships and promoting the event, successfully raising over 20k by conducting three consecutive coding competitions prior to the fest. Additionally, I designed the fest logo, posters, and banners. While it was a team effort with many contributions, I took on significant responsibilities during the event days, particularly in conducting workshops that attracted the maximum number of visitors to our fest.",
+            "image": "https://i.ibb.co/StC59H5/ITYUKTA-8.png",
         },
       
     ]
-    return render(request, 'experience2.html',{'projects': projects})
+    expertise = [
+        {
+            "main_title": "Design and Animations",
+            "description": "I had the opportunity to learn Blender and design wireframes for my laptop animation project. Through this process, I gained valuable knowledge and skills in 3D modeling, which has sparked my interest in the field of animation. This experience has opened up exciting new avenues for me to explore in 3D design, and I look forward to applying what I've learned in future projects.",
+            "image": "https://i.ibb.co/1sjnfgS/Screenshot-2024-07-21-230855.png",
+            "snapshots": [
+               "https://i.ibb.co/NCfPtP5/Screenshot-2024-04-07-221154.png",
+    "https://i.ibb.co/TYZWKfd/Screenshot-2024-04-07-215425.png",
+    "https://i.ibb.co/6tFNvBD/Screenshot-2024-04-07-215226.png",
+    "https://i.ibb.co/zVp7Ysy/Screenshot-2024-04-07-214848.png",
+    "https://i.ibb.co/CMd7fzR/Screenshot-2024-04-07-214049.png",
+    "https://i.ibb.co/ySLJkJD/Screenshot-2024-04-07-213950.png",
+    "https://i.ibb.co/6RmmXn4/Screenshot-2024-04-07-213903.png",
+     "https://i.ibb.co/TBtzH1y/Screenshot-2024-07-21-231627.png",
+    "https://i.ibb.co/zbqGbpG/Screenshot-2024-07-21-231455.png",
+    "https://i.ibb.co/2nLXrkC/Screenshot-2024-07-21-231408.png",
+    "https://i.ibb.co/MSgNTdj/Screenshot-2024-07-21-231209.png",
+    "https://i.ibb.co/9hMq6XK/Screenshot-2024-07-21-230834.png",
+    "https://i.ibb.co/cN5yJqX/Screenshot-2024-07-21-230817.png",
+    "https://i.ibb.co/GtZz7YD/Screenshot-2024-07-21-230757.png",
+    "https://i.ibb.co/cLg75N6/Screenshot-2024-07-21-230749.png",
+    "https://i.ibb.co/khjnkC4/Screenshot-2024-07-21-230739.png",
+    "https://i.ibb.co/pyCGjkb/Screenshot-2024-07-21-230638.png",
+    "https://i.ibb.co/dDDRRp5/Screenshot-2024-07-21-230622.png",
+    "https://i.ibb.co/25YSx2x/Screenshot-2024-07-21-230613.png",
+    "https://i.ibb.co/WcsXfW4/Screenshot-2024-07-21-230600.png",
+    "https://i.ibb.co/xGh4xZr/Screenshot-2024-07-21-230505.png",
+    "https://i.ibb.co/rMZ226t/Screenshot-2024-07-21-230433.png",
+    "https://i.ibb.co/c20FryG/Screenshot-2024-07-21-230358.png",
+    "https://i.ibb.co/GQyC7CQ/Screenshot-2024-07-21-230338.png",
+    "https://i.ibb.co/9s9ZvGk/Screenshot-2024-07-21-230320.png",
+    "https://i.ibb.co/mBVdZsv/Screenshot-2024-07-21-230257.png",
+    "https://i.ibb.co/jTchpNn/Screenshot-2024-07-21-230241.png",
+    "https://i.ibb.co/VS9WNQH/Screenshot-2024-07-21-230215.png",
+    "https://i.ibb.co/8DhHqf2/Screenshot-2024-07-21-230041.png",
+    "https://i.ibb.co/0yFHwBW/Screenshot-2024-07-21-230027.png",
+    "https://i.ibb.co/nBdhB7Z/Screenshot-2024-07-21-225948.png",
+    "https://i.ibb.co/2t30qBP/Screenshot-2024-07-21-225851.png",
+    "https://i.ibb.co/4NqDCzj/Screenshot-2024-07-21-225832.png",
+    "https://i.ibb.co/pxTJN3Q/Screenshot-2024-07-21-225811.png",
+    "https://i.ibb.co/g3cs477/Screenshot-2024-07-21-225719.png",
+    "https://i.ibb.co/dg7Qvp3/Screenshot-2024-07-21-225650.png",
+    "https://i.ibb.co/42Bms5Q/Screenshot-2024-07-21-225629.png",
+    "https://i.ibb.co/Wg1msmk/Screenshot-2024-07-21-225606.png",
+    "https://i.ibb.co/855cwT6/Screenshot-2024-07-21-211841.png",
+    "https://i.ibb.co/wz7N1rK/Screenshot-2024-07-21-211716.png"
+            ]
+        },]
+    return render(request, 'experience2.html',{'projects': projects,'expertise':expertise})
 def aboutme(request):
     images = [
         "https://i.ibb.co/d2JGFPb/A-drawing-page-0001.jpg",
@@ -349,7 +395,7 @@ def projects3(request):
             'description': 'This is a deep learning project developed in region-based convolutional network. This model is trained on Pascal VOC 2012 dataset; it can predict 20 classes that are: aeroplane, bicycle, bird, boat, bottle, bus, car, cat, chair, cow, dining table, dog, horse, motorbike, person, potted plant, sheep, sofa, train, tv/monitor. This model is deployed on Hugging Face and by using its API, I have deployed another one so you can visit directly on my web. Please feel free to go through my GitHub repo.',
             'image_link': 'https://i.ibb.co/qJHQ2cM/image.png',
             'github_link': 'https://github.com/Eswarkarthikk/Ml-projects-/blob/main/r-cnn.ipynb',
-            'weblink': 'https://objectdetection-weld.vercel.app/',
+            'weblink': 'https://aarieswarmlprojects.vercel.app/',
             'hugging_face_link': 'https://eswarkarthikk-object-detection.hf.space'
         },
         {
@@ -358,7 +404,7 @@ def projects3(request):
             'description': 'This project is a heart disease prediction application developed using a machine learning model and deployed on Hugging Face Spaces with a Gradio interface. Users can input various health parameters, such as age, cholesterol levels, and heart rate, to receive real-time predictions about the likelihood of heart disease. The model is trained using Scikit-learn and can be accessed via a shareable API for integration into other applications. This tool aims to assist individuals in assessing their heart health based on key indicators.',
             'image_link': 'https://i.ibb.co/2n5kdJx/image.png',
             'github_link': 'https://github.com/user/project2',
-            'weblink': 'https://example.com/test2',
+            'weblink': 'https://aarieswarmlprojects.vercel.app/predict_heart_disease/',
             'hugging_face_link': 'https://edwardhuero-heart-disease.hf.space/'
         },
         {
@@ -385,7 +431,7 @@ def projects3(request):
             'description': 'This model is trained on the previous credit card users which used them to do the fraudulant transactions . so by using the past dataset i made this model to detect the fraudsters before even authorizing a credit card to them . ',
             'image_link': 'https://example.com/image4.jpg',
             'github_link': 'https://github.com/user/project4',
-            'weblink': 'https://example.com/test4',
+            'weblink': 'https://aarieswarmlprojects.vercel.app/predict_fraud/',
             'hugging_face_link': 'https://eswarkarthikk-credit-card-fraud-detection.hf.space/'
         }
     ]

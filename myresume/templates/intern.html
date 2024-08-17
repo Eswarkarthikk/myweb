@@ -432,6 +432,7 @@
                 width: 500px;
                 height: auto; /* Ensuring image height adjusts proportionally */
                 border-radius: 15px;
+                max-height: 300px;
                 object-fit: cover;
             }
             .buttons {
@@ -548,14 +549,6 @@
             <div class="section-content animated">
                 <h2 class="section-title animated" style="font-size: 36px; font-weight: 600;">{{ project.main_title }}</h2>
                 <p class="section-text animated">{{ project.description }}</p>
-                <div class="buttons animated">
-                    <a href="{{ project.git_link }}" class="btn btn-primary btn-lg btn-github">
-                        <i class="bi bi-github"></i> Code 
-                    </a>
-                    <a href="{{ project.weblink }}" class="btn btn-secondary btn-lg btn-share">
-                        Try it <i class="bi bi-send-fill"></i>
-                    </a>
-                </div>
             </div>
             <div class="section-image animated">
                 <img src="{{ project.image }}" alt="{{ project.main_title }}" class="img-fluid rounded-image">

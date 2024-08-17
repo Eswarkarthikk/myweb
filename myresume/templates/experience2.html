@@ -429,6 +429,7 @@
             }
             .rounded-image {
                 width: 500px;
+                max-height: 400px;
                 height: auto; /* Ensuring image height adjusts proportionally */
                 border-radius: 15px;
                 object-fit: cover;
@@ -504,6 +505,80 @@
                 }
             }
         </style>
+        <style>
+            /* Adjusted styles for smaller images */
+        
+            .unique-pictures-slider {
+                height: auto; /* Adjusted height to fit content */
+                max-width: 76rem;
+                margin: 0 auto;
+                padding-bottom: 1rem; /* Added padding to reduce space */
+                overflow: hidden; /* Hide overflow to prevent extra space */
+            }
+        
+            @media (max-width: 500px) {
+                .unique-pictures-slider {
+                    max-width: 100%; /* Adjusted for smaller screens */
+                    padding-bottom: 0.5rem; /* Adjusted padding for smaller screens */
+                }
+            }
+        
+            .unique-pictures-slide {
+                width: 40rem; /* Larger width for landscape images */
+                height: 30rem; /* Larger height for landscape images */
+                position: relative;
+                overflow: hidden;
+                margin-right: 1rem; /* Added margin for spacing between slides */
+            }
+        
+            @media (max-width: 500px) {
+                .unique-pictures-slide {
+                    width: 30rem !important;
+                    height: 20rem !important;
+                    margin-right: 0.5rem; /* Adjusted margin for smaller screens */
+                }
+                .swiper-pagination-bullet {
+                    display: inline;
+                }
+            }
+        
+            .unique-pictures-slide .unique-pictures-slide-img img {
+                width: 100%;
+                height: 100%;
+                border-radius: 1rem;
+                object-fit:fill;
+            }
+        
+            .swiper-pagination {
+                position: relative;
+                margin-top: 1rem; /* Adjusted margin as needed */
+                text-align: center;
+            }
+        
+            .swiper-pagination-bullet {
+                width: 8px;
+                height: 8px;
+                background: #fff;
+                opacity: 0.5;
+                margin: 0 4px;
+                border-radius: 50%;
+            }
+        
+            .swiper-pagination-bullet-active {
+                opacity: 1;
+            }
+        
+            .swiper-button-next,
+            .swiper-button-prev {
+                color: #fff;
+                z-index: 10;
+            }
+        
+            .swiper-button-next,
+            .swiper-button-prev {
+                z-index: 11; /* Ensure navigation buttons are above pagination */
+            }
+        </style>
 </head>
 <body>
     <section class="navbar">
@@ -547,14 +622,6 @@
             <div class="section-content animated">
                 <h2 class="section-title animated" style="font-size: 36px; font-weight: 600;">{{ project.main_title }}</h2>
                 <p class="section-text animated">{{ project.description }}</p>
-                <div class="buttons animated">
-                    <a href="{{ project.git_link }}" class="btn btn-primary btn-lg btn-github">
-                        <i class="bi bi-github"></i> Code 
-                    </a>
-                    <a href="{{ project.weblink }}" class="btn btn-secondary btn-lg btn-share">
-                        Try it <i class="bi bi-send-fill"></i>
-                    </a>
-                </div>
             </div>
             <div class="section-image animated">
                 <img src="{{ project.image }}" alt="{{ project.main_title }}" class="img-fluid rounded-image">
@@ -563,7 +630,42 @@
     </div>  
 </section>
 {% endfor %}
+{% for project in expertise %}
+<section class="project animated">
+    <div class="container mt-5 animated">
+        <div class="section">
+            <div class="section-content animated">
+                <h2 class="section-title animated" style="font-size: 36px; font-weight: 600;">{{ project.main_title }}</h2>
+                <p class="section-text animated">{{ project.description }}</p>
 
+            </div>
+            <div class="section-image animated">
+                <img src="{{ project.image }}" alt="{{ project.main_title }}" class="img-fluid rounded-image">
+            </div>
+        </div>
+    </div>
+    <section id="unique-pictures" class="animated">
+        <h2 class="snapshots animated">Project SnapShots</h2>
+        <div class="slider-container">
+            <div class="swiper unique-pictures-slider animated">
+                <div class="swiper-wrapper">
+                    {% for snapshot in project.snapshots %}
+                    <div class="swiper-slide unique-pictures-slide">
+                        <div class="unique-pictures-slide-img">
+                            <img src="{{ snapshot }}" alt="Project Snapshot" class="img-fluid">
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <!-- Pagination and Navigation -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>   
+</section>
+{% endfor %}
     <section class="contact-section animated">
         <div class="contact-left">
             <div class="contact-title animated">Contact Me</div>
@@ -637,6 +739,34 @@
         });
 
         
+    </script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        var uniquePicturesSlider = new Swiper('.unique-pictures-slider', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            loop: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 169,
+                modifier: 2.2,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 3000, // Change slide every 3 seconds
+                disableOnInteraction: false,
+            },
+        });
     </script>
 </body>
 </html>
