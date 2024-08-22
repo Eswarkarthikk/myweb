@@ -193,35 +193,68 @@ def experience1(request):
     ]
     items = [
         {
-            "main_title": "Main Title 1",
-            "sub_title": "Sub Title 1",
+            "main_title": "CODE GEEKS 3.0",
+            "sub_title": "1st coding competition",
             "image": "https://i.ibb.co/CwPwVmP/20221208-112555-AMBy-GPSMap-Camera.jpg",
-            "description": "Description for the first image."
-        },
+            "description": "...."        },
         {
-            "main_title": "Main Title 2",
-            "sub_title": "Sub Title 2",
+            "main_title": "CODE FURIA 4.0",
+            "sub_title": "2nd coding competition",
             "image": "https://i.ibb.co/bbpDyCP/20221208-110937-AMBy-GPSMap-Camera.jpg",
-            "description": "Description for the second image."
+            "description": "...."
         },
         {
-            "main_title": "Main Title 3",
-            "sub_title": "Sub Title 3",
+            "main_title": "CODE FURIA 5.0",
+            "sub_title": "3rd coding competition",
             "image": "https://i.ibb.co/Jk5cyy1/20221208-104050am-By-GPSMap-Camera.jpg",
-            "description": "Description for the third image."
-        },
+            "description": "...."        },
         {
-            "main_title": "Main Title 4",
-            "sub_title": "Sub Title 4",
+            "main_title": "CODE FURIA 6.0",
+            "sub_title": "4th coding competition",
             "image": "https://i.ibb.co/Hhyg2PP/20221208-104034-AMBy-GPSMap-Camera.jpg",
-            "description": "Description for the fourth image."
+            "description": "...."
         },
         {
-            "main_title": "Main Title 5",
-            "sub_title": "Sub Title 5",
+            "main_title": "Food Donation",
+            "sub_title": "FOOD DRIVE",
             "image": "https://i.ibb.co/qJXN87m/20221208-103952-AMBy-GPSMap-Camera.jpg",
-            "description": "Description for the fifth image."
-        }
+            "description": "...."        },
+        {
+            "main_title": "Latex Doccon",
+            "sub_title": "webinar on latex ",
+            "image": "https://i.ibb.co/Hhyg2PP/20221208-104034-AMBy-GPSMap-Camera.jpg",
+            "description": "...."
+        },
+        {
+            "main_title": "Awareness on coding ",
+            "sub_title": "Code Grip",
+            "image": "https://i.ibb.co/Hhyg2PP/20221208-104034-AMBy-GPSMap-Camera.jpg",
+            "description": "...."
+        },
+            {
+            "main_title": "Code Wars 1.0",
+            "sub_title": "Fest Coding Competitions",
+            "image": "https://i.ibb.co/Hhyg2PP/20221208-104034-AMBy-GPSMap-Camera.jpg",
+            "description": "...."
+        },
+            {
+            "main_title": "Code wars 2.0",
+            "sub_title": "Fest Coding Competitions",
+            "image": "https://i.ibb.co/Hhyg2PP/20221208-104034-AMBy-GPSMap-Camera.jpg",
+            "description": "...."
+        },
+            {
+            "main_title": "Code wars 3.0",
+            "sub_title": "Fest Coding Competitions",
+            "image": "https://i.ibb.co/Hhyg2PP/20221208-104034-AMBy-GPSMap-Camera.jpg",
+            "description": "...."
+        },
+            {
+            "main_title": "Membership Drive ",
+            "sub_title": "building ACM community",
+            "image": "https://i.ibb.co/Hhyg2PP/20221208-104034-AMBy-GPSMap-Camera.jpg",
+            "description": "...."
+        },
     ]
 
     return render(request , 'Experience.html' , { 'images' : images,'items':items})
