@@ -394,7 +394,7 @@ def projects3(request):
             'title': 'Object Detection using Faster RCNN',
             'description': 'This is a deep learning project developed in region-based convolutional network. This model is trained on Pascal VOC 2012 dataset; it can predict 20 classes that are: aeroplane, bicycle, bird, boat, bottle, bus, car, cat, chair, cow, dining table, dog, horse, motorbike, person, potted plant, sheep, sofa, train, tv/monitor. This model is deployed on Hugging Face and by using its API, I have deployed another one so you can visit directly on my web. Please feel free to go through my GitHub repo.',
             'image_link': 'https://i.ibb.co/qJHQ2cM/image.png',
-            'github_link': 'https://github.com/Eswarkarthikk/Ml-projects-/blob/main/r-cnn.ipynb',
+            'github_link': 'https://github.com/Eswarkarthikk/Ml_projects/tree/main/object%20detection',
             'weblink': 'https://aarieswarmlprojects.vercel.app/',
             'hugging_face_link': 'https://eswarkarthikk-object-detection.hf.space'
         },
@@ -403,7 +403,7 @@ def projects3(request):
             'title': 'Medical Diagnosis Heart Disease',
             'description': 'This project is a heart disease prediction application developed using a machine learning model and deployed on Hugging Face Spaces with a Gradio interface. Users can input various health parameters, such as age, cholesterol levels, and heart rate, to receive real-time predictions about the likelihood of heart disease. The model is trained using Scikit-learn and can be accessed via a shareable API for integration into other applications. This tool aims to assist individuals in assessing their heart health based on key indicators.',
             'image_link': 'https://i.ibb.co/2n5kdJx/image.png',
-            'github_link': 'https://github.com/user/project2',
+            'github_link': 'https://github.com/Eswarkarthikk/Ml_projects/tree/main/medical%20diagnosis%20heart%20disease',
             'weblink': 'https://aarieswarmlprojects.vercel.app/predict_heart_disease/',
             'hugging_face_link': 'https://edwardhuero-heart-disease.hf.space/'
         },
@@ -411,8 +411,8 @@ def projects3(request):
             'sectiontitle': 'Digit Recognition',
             'title': 'Handwritten digit recognition',
             'description': 'This is a small project that i have done as a part of teckybot internship . you should check this project . I developed this model to detect the single digit at once . ',
-            'image_link': 'https://example.com/image3.jpg',
-            'github_link': 'https://github.com/user/project3',
+            'image_link': 'https://i.ibb.co/bNpNKfC/image.png',
+            'github_link': 'https://github.com/Eswarkarthikk/Ml_projects/tree/main/Hand%20written%20digit%20recognition',
             'weblink': 'https://example.com/test3',
             'hugging_face_link': 'https://eswarkarthikk-digit-recognition.hf.space/'
         },
@@ -420,8 +420,8 @@ def projects3(request):
             'sectiontitle': 'Route Finder',
             'title': 'Andra Pradesh route finding ',
             'description': ' This is not a machine learning project but i have developed this from scratch . i got the dataset built by me and you should check this . It results the routs according to the location of the cities rather than the actual route between them . ',
-            'image_link': 'https://example.com/image4.jpg',
-            'github_link': 'https://github.com/user/project4',
+            'image_link': 'https://i.ibb.co/T42rZ25/image.png',
+            'github_link': 'https://github.com/Eswarkarthikk/Ml_projects/tree/main/Route%20Finding',
             'weblink': 'https://example.com/test4',
             'hugging_face_link': 'https://edwardhuero-route-finding.hf.space/'
         },
@@ -429,8 +429,8 @@ def projects3(request):
             'sectiontitle': 'Fraud Detection',
             'title': 'Credit Card Fraud Detection',
             'description': 'This model is trained on the previous credit card users which used them to do the fraudulant transactions . so by using the past dataset i made this model to detect the fraudsters before even authorizing a credit card to them . ',
-            'image_link': 'https://example.com/image4.jpg',
-            'github_link': 'https://github.com/user/project4',
+            'image_link': 'https://i.ibb.co/KVKFGGG/image.png',
+            'github_link': 'https://github.com/Eswarkarthikk/Ml_projects/tree/main/Credit%20card%20fraud%20detection',
             'weblink': 'https://aarieswarmlprojects.vercel.app/predict_fraud/',
             'hugging_face_link': 'https://eswarkarthikk-credit-card-fraud-detection.hf.space/'
         }
