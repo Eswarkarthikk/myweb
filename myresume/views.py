@@ -166,7 +166,7 @@ def projects2(request):
     return render(request, 'apps.html',{'projects': projects})
 def experience1(request):
 
-    # images = [
+    images = [
     #     "https://i.ibb.co/CwPwVmP/20221208-112555-AMBy-GPSMap-Camera.jpg",
     #     "https://i.ibb.co/bbpDyCP/20221208-110937-AMBy-GPSMap-Camera.jpg",
     #     "https://i.ibb.co/Jk5cyy1/20221208-104050am-By-GPSMap-Camera.jpg",
@@ -190,7 +190,7 @@ def experience1(request):
     #     "https://i.ibb.co/GvD7QDB/1670774555234.jpg",
     #     "https://i.ibb.co/rZj0qcC/1670774554878.jpg",
     #     "https://i.ibb.co/YhXj5pQ/20221208-112603-AMBy-GPSMap-Camera.jpg"
-    # ]
+    ]
     items = [
         {
             "main_title": "CODE GEEKS 3.0",
