@@ -166,31 +166,31 @@ def projects2(request):
     return render(request, 'apps.html',{'projects': projects})
 def experience1(request):
 
-    images = [
-        "https://i.ibb.co/CwPwVmP/20221208-112555-AMBy-GPSMap-Camera.jpg",
-        "https://i.ibb.co/bbpDyCP/20221208-110937-AMBy-GPSMap-Camera.jpg",
-        "https://i.ibb.co/Jk5cyy1/20221208-104050am-By-GPSMap-Camera.jpg",
-        "https://i.ibb.co/Hhyg2PP/20221208-104034-AMBy-GPSMap-Camera.jpg",
-        "https://i.ibb.co/qJXN87m/20221208-103952-AMBy-GPSMap-Camera.jpg",
-        "https://i.ibb.co/RH9GGH4/20221208-103942-AMBy-GPSMap-Camera.jpg",
-        "https://i.ibb.co/c1YwVYS/20221208-103927-AMBy-GPSMap-Camera.jpg",
-        "https://i.ibb.co/V2ZMS1G/20221208-102308-AMBy-GPSMap-Camera.jpg",
-        "https://i.ibb.co/z6z15sP/20221208-102306-AMBy-GPSMap-Camera.jpg",
-        "https://i.ibb.co/QKVzZtf/20221208-102241-AMBy-GPSMap-Camera.jpg",
-        "https://i.ibb.co/gr3Sp3W/20221208-102059-AMBy-GPSMap-Camera.jpg",
-        "https://i.ibb.co/884ktr9/20221208-101156-AMBy-GPSMap-Camera.jpg",
-        "https://i.ibb.co/tcr8Psk/20221208-100312am-By-GPSMap-Camera.jpg",
-        "https://i.ibb.co/MGKkyg2/20221208-95629am-By-GPSMap-Camera.jpg",
-        "https://i.ibb.co/9ZBRQVj/20221208-95524am-By-GPSMap-Camera.jpg",
-        "https://i.ibb.co/x3Psx3G/20221208-95109am-By-GPSMap-Camera.jpg",
-        "https://i.ibb.co/vd22DVw/20221208-95056am-By-GPSMap-Camera.jpg",
-        "https://i.ibb.co/djPDgtP/20221208-94643am-By-GPSMap-Camera.jpg",
-        "https://i.ibb.co/s5cCGC2/IMG20221208093639.jpg",
-        "https://i.ibb.co/QkrzXpk/1670774555199.jpg",
-        "https://i.ibb.co/GvD7QDB/1670774555234.jpg",
-        "https://i.ibb.co/rZj0qcC/1670774554878.jpg",
-        "https://i.ibb.co/YhXj5pQ/20221208-112603-AMBy-GPSMap-Camera.jpg"
-    ]
+    # images = [
+    #     "https://i.ibb.co/CwPwVmP/20221208-112555-AMBy-GPSMap-Camera.jpg",
+    #     "https://i.ibb.co/bbpDyCP/20221208-110937-AMBy-GPSMap-Camera.jpg",
+    #     "https://i.ibb.co/Jk5cyy1/20221208-104050am-By-GPSMap-Camera.jpg",
+    #     "https://i.ibb.co/Hhyg2PP/20221208-104034-AMBy-GPSMap-Camera.jpg",
+    #     "https://i.ibb.co/qJXN87m/20221208-103952-AMBy-GPSMap-Camera.jpg",
+    #     "https://i.ibb.co/RH9GGH4/20221208-103942-AMBy-GPSMap-Camera.jpg",
+    #     "https://i.ibb.co/c1YwVYS/20221208-103927-AMBy-GPSMap-Camera.jpg",
+    #     "https://i.ibb.co/V2ZMS1G/20221208-102308-AMBy-GPSMap-Camera.jpg",
+    #     "https://i.ibb.co/z6z15sP/20221208-102306-AMBy-GPSMap-Camera.jpg",
+    #     "https://i.ibb.co/QKVzZtf/20221208-102241-AMBy-GPSMap-Camera.jpg",
+    #     "https://i.ibb.co/gr3Sp3W/20221208-102059-AMBy-GPSMap-Camera.jpg",
+    #     "https://i.ibb.co/884ktr9/20221208-101156-AMBy-GPSMap-Camera.jpg",
+    #     "https://i.ibb.co/tcr8Psk/20221208-100312am-By-GPSMap-Camera.jpg",
+    #     "https://i.ibb.co/MGKkyg2/20221208-95629am-By-GPSMap-Camera.jpg",
+    #     "https://i.ibb.co/9ZBRQVj/20221208-95524am-By-GPSMap-Camera.jpg",
+    #     "https://i.ibb.co/x3Psx3G/20221208-95109am-By-GPSMap-Camera.jpg",
+    #     "https://i.ibb.co/vd22DVw/20221208-95056am-By-GPSMap-Camera.jpg",
+    #     "https://i.ibb.co/djPDgtP/20221208-94643am-By-GPSMap-Camera.jpg",
+    #     "https://i.ibb.co/s5cCGC2/IMG20221208093639.jpg",
+    #     "https://i.ibb.co/QkrzXpk/1670774555199.jpg",
+    #     "https://i.ibb.co/GvD7QDB/1670774555234.jpg",
+    #     "https://i.ibb.co/rZj0qcC/1670774554878.jpg",
+    #     "https://i.ibb.co/YhXj5pQ/20221208-112603-AMBy-GPSMap-Camera.jpg"
+    # ]
     items = [
         {
             "main_title": "CODE GEEKS 3.0",
